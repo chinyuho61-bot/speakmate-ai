@@ -8,8 +8,8 @@ import {
   startListening,
   playModelAudio,
   playNameSplicedAudio,
+  playNarrationSequence,
   speakEnglish,
-  speakChinese,
   cancelSpeech,
 } from "@/lib/speech";
 import { useI18n } from "@/lib/i18n";
@@ -73,16 +73,34 @@ export function LessonPage() {
   // question, same as the reference app's "Alice, welcome back!" intro.
   useEffect(() => {
     if (phase !== "ask") return;
-    const questionZh = chapter?.turns[turnIndex]?.questionZh;
-    if (!questionZh) return;
-    if (turnIndex === 0 && user?.name && chapter) {
+    const activeTurn = chapter?.turns[turnIndex];
+    const questionZh = activeTurn?.questionZh;
+    if (!questionZh || !scenario || !chapter) return;
+    const questionAudioId = `${getStoredTutorId()}/zh/${scenario.id}--${chapter.id}--${activeTurn!.id}--question`;
+    if (turnIndex === 0 && user?.name) {
       const greeting = t("lesson.chapterGreeting", { name: user.name, goal: chapter.goalZh });
-      speakChinese([greeting, questionZh]);
+      playNarrationSequence([
+        { audioId: null, text: greeting },
+        { audioId: questionAudioId, text: questionZh },
+      ]);
     } else {
-      speakChinese(questionZh);
+      playNarrationSequence([{ audioId: questionAudioId, text: questionZh }]);
     }
     return () => cancelSpeech();
-  }, [phase, turnIndex, chapter, user?.name, t]);
+  }, [phase, turnIndex, chapter, scenario, user?.name, t]);
+
+  // Reads the encouragement line aloud once the learner's answer is
+  // understood, same recorded-clip-with-TTS-fallback approach as the
+  // question above.
+  useEffect(() => {
+    if (phase !== "understood") return;
+    const activeTurn = chapter?.turns[turnIndex];
+    const encouragementZh = activeTurn?.encouragementZh;
+    if (!encouragementZh || !scenario || !chapter) return;
+    const audioId = `${getStoredTutorId()}/zh/${scenario.id}--${chapter.id}--${activeTurn!.id}--encouragement`;
+    playNarrationSequence([{ audioId, text: encouragementZh }]);
+    return () => cancelSpeech();
+  }, [phase, turnIndex, chapter, scenario]);
 
   if (!scenario || !chapter || !params) {
     return (
@@ -300,13 +318,14 @@ export function LessonPage() {
                       className="hear"
                       onClick={() => {
                         const questionZh = turn.questionZh;
+                        const questionAudioId = `${getStoredTutorId()}/zh/${scenario.id}--${chapter.id}--${turn.id}--question`;
                         if (turnIndex === 0 && user?.name) {
-                          speakChinese([
-                            t("lesson.chapterGreeting", { name: user.name, goal: chapter.goalZh }),
-                            questionZh,
+                          playNarrationSequence([
+                            { audioId: null, text: t("lesson.chapterGreeting", { name: user.name, goal: chapter.goalZh }) },
+                            { audioId: questionAudioId, text: questionZh },
                           ]);
                         } else {
-                          speakChinese(questionZh);
+                          playNarrationSequence([{ audioId: questionAudioId, text: questionZh }]);
                         }
                       }}
                       title={t("lesson.hearQuestion")}

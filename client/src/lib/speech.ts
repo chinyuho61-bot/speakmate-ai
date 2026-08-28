@@ -177,37 +177,6 @@ function pickBestVoiceZh(voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice |
     .sort((a, b) => b.score - a.score)[0]?.voice;
 }
 
-// Reads one or more Chinese/Cantonese lines aloud back-to-back (e.g. the
-// chapter-start greeting followed by the first question) — same
-// fallback-friendly design as speakEnglish, just with a Chinese voice
-// preference instead of an English one. Chains lines via each utterance's
-// onend so they play in order with a natural pause between them, rather
-// than overlapping or requiring separate calls.
-export async function speakChinese(text: string | string[], rate = 1): Promise<void> {
-  const lines = (Array.isArray(text) ? text : [text]).filter(Boolean);
-  if (!isSpeechSynthesisSupported() || lines.length === 0) return;
-  const voices = await loadVoices();
-  window.speechSynthesis.cancel();
-  const best = pickBestVoiceZh(voices);
-  const lang = best?.lang || "zh-HK";
-
-  let i = 0;
-  const speakNext = () => {
-    if (i >= lines.length) return;
-    const utterance = new SpeechSynthesisUtterance(lines[i]);
-    utterance.lang = lang;
-    utterance.rate = rate;
-    if (best) utterance.voice = best;
-    utterance.onend = () => {
-      i += 1;
-      speakNext();
-    };
-    currentUtterance = utterance;
-    window.speechSynthesis.speak(utterance);
-  };
-  speakNext();
-}
-
 let speechUnlocked = false;
 
 // Mobile browsers (iOS Safari in particular, and some Android WebViews)
@@ -262,6 +231,73 @@ export function playModelAudio(audioId: string, fallbackText: string, rate = 1):
 
   audio.addEventListener("error", fallback);
   audio.play().catch(fallback);
+}
+
+// Plays a model sentence that has the learner's own name spliced into it:
+// recorded clip (prefix) -> live TTS of just the name -> recorded clip
+// (suffix). Keeps Riley's real voice for the fixed wording either side of
+// Plays a sequence of Cantonese narration lines (e.g. chapter greeting +
+// question), using a pre-recorded per-tutor clip when available for a line
+// and falling back to live TTS for just that line otherwise — so a
+// partially-recorded narration set (some turns done, some not yet) still
+// plays correctly, and a line with no possible recording (audioId: null,
+// e.g. the greeting, which is built from the learner's own name at
+// runtime) always uses live TTS.
+export function playNarrationSequence(
+  lines: { audioId: string | null; text: string }[],
+  rate = 1
+): void {
+  cancelSpeech();
+  const filtered = lines.filter((l) => l.text);
+  if (filtered.length === 0) return;
+
+  let i = 0;
+  const playNext = async () => {
+    if (i >= filtered.length) return;
+    const { audioId, text } = filtered[i];
+
+    const speakLiveThenNext = async () => {
+      if (!isSpeechSynthesisSupported()) {
+        i += 1;
+        playNext();
+        return;
+      }
+      const voices = await loadVoices();
+      const best = pickBestVoiceZh(voices);
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = best?.lang || "zh-HK";
+      utterance.rate = rate;
+      if (best) utterance.voice = best;
+      utterance.onend = () => {
+        i += 1;
+        playNext();
+      };
+      currentUtterance = utterance;
+      window.speechSynthesis.speak(utterance);
+    };
+
+    if (!audioId) {
+      speakLiveThenNext();
+      return;
+    }
+
+    const audio = new Audio(`/audio/${audioId}.mp3`);
+    audio.playbackRate = rate;
+    currentAudioEl = audio;
+    let fellBack = false;
+    const fallback = () => {
+      if (fellBack) return;
+      fellBack = true;
+      speakLiveThenNext();
+    };
+    audio.addEventListener("error", fallback);
+    audio.addEventListener("ended", () => {
+      i += 1;
+      playNext();
+    });
+    audio.play().catch(fallback);
+  };
+  playNext();
 }
 
 // Plays a model sentence that has the learner's own name spliced into it:
