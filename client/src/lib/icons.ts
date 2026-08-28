@@ -1,4 +1,25 @@
-import { UserCircle, UtensilsCrossed, Briefcase, Presentation, Map, Stethoscope, Landmark } from "lucide-react";
+import {
+  UserCircle,
+  UtensilsCrossed,
+  Briefcase,
+  Presentation,
+  Map,
+  Stethoscope,
+  Landmark,
+  ShoppingBag,
+  Home,
+  Mail,
+  Handshake,
+  Headset,
+  Megaphone,
+  Users,
+  MessageSquare,
+  Swords,
+  Target,
+  Globe,
+  AlertTriangle,
+  Crown,
+} from "lucide-react";
 import type { ScenarioIcon } from "@shared/types";
 
 export const scenarioIconMap: Record<ScenarioIcon, typeof UserCircle> = {
@@ -9,4 +30,17 @@ export const scenarioIconMap: Record<ScenarioIcon, typeof UserCircle> = {
   "map-trifold": Map,
   stethoscope: Stethoscope,
   landmark: Landmark,
+  "shopping-bag": ShoppingBag,
+  house: Home,
+  mail: Mail,
+  handshake: Handshake,
+  headset: Headset,
+  megaphone: Megaphone,
+  users: Users,
+  "message-square": MessageSquare,
+  swords: Swords,
+  target: Target,
+  globe: Globe,
+  "alert-triangle": AlertTriangle,
+  crown: Crown,
 };

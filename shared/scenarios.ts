@@ -769,6 +769,20 @@ export const scenarios: Scenario[] = [
               },
             ],
           },
+          {
+            id: "t3",
+            questionZh: "如果想補充自己主要負責的工作內容，可以怎麼說？",
+            chips: ["我主要負責...", "我的工作內容包括..."],
+            encouragementZh: "明白了，你想補充工作內容。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "My main responsibility is managing client relationships.",
+                zh: "意思：我主要負責管理客戶關係。",
+                usageZh: "My main responsibility is … 是簡潔說明工作內容的常見句型。",
+              },
+            ],
+          },
         ],
       },
       {
@@ -1269,6 +1283,20 @@ export const scenarios: Scenario[] = [
               { keywords: ["保持好奇心", "好奇心"], models: [{ labelZh: "最後一句 · Riley 教你講", en: "It keeps my sense of curiosity alive.", zh: "意思：這件事讓我保持好奇心。", usageZh: "keep… alive 是表達持續保有某種特質的常見說法。" }] },
             ],
           },
+          {
+            id: "t3",
+            questionZh: "如果想邀請對方一起參與這個興趣，可以怎麼說？",
+            chips: ["有興趣一起試試嗎？", "下次可以一起去"],
+            encouragementZh: "明白了，你想邀請對方一起參與。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Would you like to join me sometime?",
+                zh: "意思：你有興趣下次一起參加嗎？",
+                usageZh: "Would you like to … 是邀請別人最自然、有禮貌的說法。",
+              },
+            ],
+          },
         ],
       },
       {
@@ -1301,6 +1329,20 @@ export const scenarios: Scenario[] = [
                 en: "That sounds really interesting!",
                 zh: "意思：哇，聽起來真有趣！",
                 usageZh: "這句幾乎適用於任何回應，能讓對話繼續下去。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "如果想更深入了解對方的背景，可以怎麼問？",
+            chips: ["你做這份工作多久了？", "是什麼讓你選擇這個領域？"],
+            encouragementZh: "明白了，你想更深入了解對方的背景。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "What made you choose this field?",
+                zh: "意思：是什麼讓你選擇這個領域？",
+                usageZh: "What made you … 是深入了解對方背景時常用的問法。",
               },
             ],
           },
@@ -3078,6 +3120,20 @@ export const scenarios: Scenario[] = [
               },
             ],
           },
+          {
+            id: "t3",
+            questionZh: "如果想把吃不完的食物打包帶走，可以怎麼說？",
+            chips: ["可以打包嗎？", "麻煩幫我打包"],
+            encouragementZh: "明白了，你想要求打包。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Could I get this to go, please?",
+                zh: "意思：可以幫我打包帶走嗎？",
+                usageZh: "to go 是「外帶」的常見說法，適用於任何想打包的食物。",
+              },
+            ],
+          },
         ],
       },
       {
@@ -3544,6 +3600,20 @@ export const scenarios: Scenario[] = [
               },
             ],
           },
+          {
+            id: "t3",
+            questionZh: "如果想查詢某道菜是否含有你不能吃的成分，可以怎麼問？",
+            chips: ["這道菜有花生嗎？", "這個含有海鮮嗎？"],
+            encouragementZh: "明白了，你想查詢成分。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Does this dish contain any peanuts?",
+                zh: "意思：這道菜有花生嗎？",
+                usageZh: "Does this contain … 是查詢食物成分最直接的問法。",
+              },
+            ],
+          },
         ],
       },
       {
@@ -3576,6 +3646,20 @@ export const scenarios: Scenario[] = [
                 en: "Could you please bring me the one I ordered?",
                 zh: "意思：可以幫我換成我點的那個嗎？",
                 usageZh: "這句既禮貌又清楚，服務生會立刻明白該怎麼處理。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "結帳時發現賬單有誤，你會怎麼說？",
+            chips: ["這個賬單好像不對", "可以幫我核對一下賬單嗎？"],
+            encouragementZh: "明白了，你想指出賬單有誤。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "I think there's a mistake on the bill.",
+                zh: "意思：我覺得這張賬單好像有誤。",
+                usageZh: "I think there's a mistake 是禮貌指出問題的常見說法。",
               },
             ],
           },
@@ -3885,6 +3969,20 @@ export const scenarios: Scenario[] = [
               },
             ],
           },
+          {
+            id: "t3",
+            questionZh: "如果面試官問你何時可以到職，可以怎麼回答？",
+            chips: ["我可以隨時到職", "我需要兩星期通知期"],
+            encouragementZh: "明白了，你想說明到職時間。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "I can start immediately if needed.",
+                zh: "意思：如果需要，我可以立即到職。",
+                usageZh: "I can start … 是回答到職時間最直接的說法。",
+              },
+            ],
+          },
         ],
       },
       {
@@ -3924,6 +4022,20 @@ export const scenarios: Scenario[] = [
                 en: "Another time, I reorganised our filing system, which saved the whole team time.",
                 zh: "意思：另一次我重整了文件系統，為整個團隊節省了時間。",
                 usageZh: "用 another time 承接上一個例子，不必重複 for example。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "如果面試官問你的弱點，你會怎麼回答？",
+            chips: ["我有時會太注重細節", "我正在學習更有效地分配時間"],
+            encouragementZh: "明白了，你想坦誠說明待改善的地方。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "I sometimes focus too much on details, but I'm learning to manage my time better.",
+                zh: "意思：我有時會太注重細節，但我正在學習更有效分配時間。",
+                usageZh: "承認弱點的同時補充正在改善，是回答這類問題最得體的方式。",
               },
             ],
           },
@@ -3973,6 +4085,20 @@ export const scenarios: Scenario[] = [
               },
             ],
           },
+          {
+            id: "t3",
+            questionZh: "如果工作上遇到困難，需要同事協助，可以怎麼說？",
+            chips: ["我遇到一些困難", "可以幫我看看這個問題嗎？"],
+            encouragementZh: "明白了，你想尋求協助。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "I've run into a bit of a snag — could someone take a look?",
+                zh: "意思：我遇到一些困難，可以有人幫忙看看嗎？",
+                usageZh: "run into a snag 是「遇到小麻煩」的常見說法，語氣輕鬆自然。",
+              },
+            ],
+          },
         ],
       },
       {
@@ -4005,6 +4131,20 @@ export const scenarios: Scenario[] = [
                 en: "This way, we'll have more time to test before launch.",
                 zh: "意思：這樣我們在推出之前就有更多時間測試。",
                 usageZh: "This way 能幫你將建議與結果連結在一起說明。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "如果隊友有不同意見，你想如何回應以達成共識？",
+            chips: ["我明白你的看法", "或者我們可以結合兩個方案"],
+            encouragementZh: "明白了，你想回應不同意見並尋求共識。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "That's a fair point — maybe we could combine both approaches.",
+                zh: "意思：這個看法有道理，或者我們可以結合兩個方案。",
+                usageZh: "That's a fair point 是禮貌回應不同意見、同時保持開放態度的常見說法。",
               },
             ],
           },
@@ -4054,6 +4194,20 @@ export const scenarios: Scenario[] = [
               },
             ],
           },
+          {
+            id: "t3",
+            questionZh: "如果想確認是否可以步行到達，可以怎麼問？",
+            chips: ["可以走路過去嗎？", "搭車比較快嗎？"],
+            encouragementZh: "明白了，你想確認交通方式。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Is it within walking distance?",
+                zh: "意思：這裡走路可以到嗎？",
+                usageZh: "within walking distance 是問「是否可以步行到達」的常見說法。",
+              },
+            ],
+          },
         ],
       },
       {
@@ -4086,6 +4240,20 @@ export const scenarios: Scenario[] = [
                 en: "Thank you so much, that's really helpful.",
                 zh: "意思：非常感謝，真的幫了我很多。",
                 usageZh: "這句適用於任何人幫助你之後，表達真心的感謝。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "如果想確認附近有明顯的地標方便辨認，可以怎麼問？",
+            chips: ["附近有明顯的地標嗎？", "有什麼可以幫我認路嗎？"],
+            encouragementZh: "明白了，你想確認附近的地標。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Is there a landmark nearby I can look out for?",
+                zh: "意思：附近有沒有明顯的地標可以留意？",
+                usageZh: "look out for 是「留意、找尋」的常見說法，問路時很實用。",
               },
             ],
           },
@@ -4135,6 +4303,20 @@ export const scenarios: Scenario[] = [
               },
             ],
           },
+          {
+            id: "t3",
+            questionZh: "如果想知道是否需要做進一步檢查，可以怎麼問？",
+            chips: ["需要做檢查嗎？", "需要驗血嗎？"],
+            encouragementZh: "明白了，你想查詢是否需要進一步檢查。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Do I need to have any tests done?",
+                zh: "意思：我需要做任何檢查嗎？",
+                usageZh: "have tests done 是「接受檢查」的常見說法。",
+              },
+            ],
+          },
         ],
       },
       {
@@ -4167,6 +4349,20 @@ export const scenarios: Scenario[] = [
                 en: "How many times a day should I take this?",
                 zh: "意思：這個藥一天要吃幾次？",
                 usageZh: "How many times a day 是詢問服藥頻率的常見說法。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "你想確認這個藥物有沒有副作用，可以怎麼問？",
+            chips: ["這個藥物有副作用嗎？", "服用後會有什麼反應嗎？"],
+            encouragementZh: "明白了，你想查詢藥物的副作用。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Are there any side effects I should be aware of?",
+                zh: "意思：有沒有我應該注意的副作用？",
+                usageZh: "side effects 是「副作用」的固定說法，就診時常用得到。",
               },
             ],
           },
@@ -4216,6 +4412,20 @@ export const scenarios: Scenario[] = [
               },
             ],
           },
+          {
+            id: "t3",
+            questionZh: "你想查詢開戶是否需要手續費，可以怎麼問？",
+            chips: ["開戶需要手續費嗎？", "最低存款額是多少？"],
+            encouragementZh: "明白了，你想查詢開戶的相關費用。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Is there a fee for opening this account?",
+                zh: "意思：開立這個戶口需要手續費嗎？",
+                usageZh: "Is there a fee for … 是查詢是否需要收費的常見句型。",
+              },
+            ],
+          },
         ],
       },
       {
@@ -4248,6 +4458,1437 @@ export const scenarios: Scenario[] = [
                 en: "Could you help me set up online banking?",
                 zh: "意思：可以幫我開通網上銀行嗎？",
                 usageZh: "set up 是表示「開通、設定」某項服務的常見說法。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "你想查詢如何查看戶口結餘，可以怎麼問？",
+            chips: ["可以怎麼查詢結餘？", "在哪裡查看交易記錄？"],
+            encouragementZh: "明白了，你想查詢如何查看戶口結餘。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "How can I check my account balance?",
+                zh: "意思：我可以怎樣查詢戶口結餘？",
+                usageZh: "How can I … 是詢問操作方法時最常用的句型。",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "shopping-returns",
+    title: "Shop and return items",
+    titleZh: "購物與退換貨",
+    description: "試身、查詢尺寸，退換貨都能清楚表達。",
+    accent: "blue",
+    icon: "shopping-bag",
+    level: "intermediate",
+    chapters: [
+      {
+        id: "trying-items",
+        title: "試身與查詢",
+        goalZh: "學會查詢尺寸和顏色，並要求試身。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "你想查詢有沒有其他尺寸，可以怎麼問？",
+            chips: ["有沒有大一點的？", "有其他尺寸嗎？"],
+            encouragementZh: "明白了，你想查詢其他尺寸。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Do you have this in a bigger size?",
+                zh: "意思：這件有大一點的尺寸嗎？",
+                usageZh: "Do you have this in … 是查詢尺寸或顏色時最常用的句型。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想去試身室試穿，可以怎麼說？",
+            chips: ["可以試身嗎？", "試身室在哪裡？"],
+            encouragementZh: "明白了，你想要求試身。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Could I try this on, please?",
+                zh: "意思：可以讓我試穿一下嗎？",
+                usageZh: "try … on 是「試穿」的固定說法，適用於任何衣物。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "如果想查詢這件衣服是什麼材質，可以怎麼問？",
+            chips: ["這件是什麼材質？", "洗滌方式是怎樣？"],
+            encouragementZh: "明白了，你想查詢衣服的材質。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "What material is this made of?",
+                zh: "意思：這件是用什麼材質做的？",
+                usageZh: "What is … made of 是查詢材質最直接的問法。",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "returns-exchanges",
+        title: "退貨與換貨",
+        goalZh: "學會禮貌地提出退貨或換貨要求。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "你想退回一件不合適的商品，可以怎麼說？",
+            chips: ["我想退這件", "可以退款嗎？"],
+            encouragementZh: "明白了，你想提出退貨要求。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "I'd like to return this, please.",
+                zh: "意思：我想退這件，麻煩你。",
+                usageZh: "I'd like to return this 是提出退貨最直接、有禮貌的說法。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "職員問你想退款還是換貨，你會怎麼答？",
+            chips: ["我想換另一個尺寸", "我想退款"],
+            encouragementZh: "明白了，你想說明換貨或退款的選擇。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "I'd prefer to exchange it for a different size.",
+                zh: "意思：我比較想換另一個尺寸。",
+                usageZh: "I'd prefer to … 語氣溫和，適合表達自己的選擇。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "職員問你有沒有帶收據，可以怎麼回答？",
+            chips: ["有，收據在這裡", "我沒有收據，可以嗎？"],
+            encouragementZh: "明白了，你想說明收據狀況。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Yes, I have the receipt right here.",
+                zh: "意思：有，收據就在這裡。",
+                usageZh: "right here 強調「就在手邊」，回答時更清楚俐落。",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "apartment-rental",
+    title: "Rent an apartment",
+    titleZh: "租屋",
+    description: "睇樓、簽約，處理租屋事務更有信心。",
+    accent: "mint",
+    icon: "house",
+    level: "intermediate",
+    chapters: [
+      {
+        id: "viewing-apartment",
+        title: "睇樓",
+        goalZh: "學會查詢租金、租期及單位設備。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "你想向地產經紀查詢租金，可以怎麼問？",
+            chips: ["這裡的租金是多少？", "租金包不包水電？"],
+            encouragementZh: "明白了，你想查詢租金。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "How much is the rent per month?",
+                zh: "意思：這裡每個月的租金是多少？",
+                usageZh: "per month 明確表示「每月」，避免與押金或其他費用混淆。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想查詢是否需要簽長約，可以怎麼問？",
+            chips: ["最短需要租多久？", "可以簽一年的合約嗎？"],
+            encouragementZh: "明白了，你想查詢租期。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "What's the minimum lease term?",
+                zh: "意思：最短的租期是多久？",
+                usageZh: "lease term 是「租期」的固定說法，睇樓時常用得到。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "你想查詢單位是否已經有傢俱，可以怎麼問？",
+            chips: ["這個單位有傢俱嗎？", "是否連傢俱出租？"],
+            encouragementZh: "明白了，你想查詢單位是否已有傢俱。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Is this apartment furnished?",
+                zh: "意思：這個單位是連傢俱出租的嗎？",
+                usageZh: "furnished 表示「已配備傢俱」，是租屋時常見的用字。",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "signing-lease",
+        title: "簽約",
+        goalZh: "學會查詢按金、維修責任及退租條件。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "你想查詢按金是多少，可以怎麼問？",
+            chips: ["按金需要多少？", "需要付幾個月的按金？"],
+            encouragementZh: "明白了，你想查詢按金金額。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "How much is the deposit?",
+                zh: "意思：按金是多少？",
+                usageZh: "deposit 是「按金」的固定說法，簽約時一定會用到。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想查詢維修責任歸誰，可以怎麼問？",
+            chips: ["維修責任由誰負責？", "電器損壞應該怎麼處理？"],
+            encouragementZh: "明白了，你想查詢維修責任。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Who's responsible for repairs?",
+                zh: "意思：維修責任是由誰負責？",
+                usageZh: "Who's responsible for … 是查詢責任歸屬最直接的問法。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "你想確認退租時按金是否可以全數退還，可以怎麼問？",
+            chips: ["退租時按金可以全數退還嗎？", "什麼情況會扣除按金？"],
+            encouragementZh: "明白了，你想確認退租時按金的退還條件。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Will I get the full deposit back when I move out?",
+                zh: "意思：搬走的時候可以拿回全額按金嗎？",
+                usageZh: "move out 是「搬走、遷出」的常見說法，租屋情境中經常使用。",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "post-office",
+    title: "Visit the post office",
+    titleZh: "郵局",
+    description: "寄包裹、買郵票，處理郵寄事務更有信心。",
+    accent: "yellow",
+    icon: "mail",
+    level: "intermediate",
+    chapters: [
+      {
+        id: "sending-package",
+        title: "寄包裹",
+        goalZh: "學會查詢寄件時間、方式及追蹤服務。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "你想查詢寄包裹去外國需要多久，可以怎麼問？",
+            chips: ["寄到國外需要多久？", "大約幾天可以收到？"],
+            encouragementZh: "明白了，你想查詢寄件所需時間。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "How long does international shipping take?",
+                zh: "意思：寄到國外大概需要多久？",
+                usageZh: "international shipping 是「國際運送」的固定說法。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "職員問你想用什麼方式寄送，可以怎麼回答？",
+            chips: ["我想用空運", "可以用平郵嗎？"],
+            encouragementZh: "明白了，你想說明寄送方式。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "I'd like to send it by air mail, please.",
+                zh: "意思：我想用空運寄送，麻煩你。",
+                usageZh: "by air mail 是「用空運」的固定說法，寄件時常用。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "你想查詢有沒有追蹤服務，可以怎麼問？",
+            chips: ["包裹如果遺失怎麼辦？", "有沒有追蹤服務？"],
+            encouragementZh: "明白了，你想查詢包裹的追蹤服務。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Is there a tracking service available?",
+                zh: "意思：有沒有可以追蹤包裹的服務？",
+                usageZh: "tracking service 是「追蹤服務」的固定說法，寄貴重物品時特別實用。",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "buying-stamps",
+        title: "買郵票",
+        goalZh: "學會查詢郵費並購買郵票。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "你想查詢寄信去某個地方需要多少郵費，可以怎麼問？",
+            chips: ["寄信到那裡需要多少郵費？", "郵費是怎麼計算的？"],
+            encouragementZh: "明白了，你想查詢郵費。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "How much does it cost to mail a letter there?",
+                zh: "意思：寄一封信去那裡需要多少錢？",
+                usageZh: "mail a letter 是「寄信」的常見說法。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想購買幾張郵票，可以怎麼說？",
+            chips: ["我想買幾張郵票", "可以買五張郵票嗎？"],
+            encouragementZh: "明白了，你想購買郵票。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Could I get five stamps, please?",
+                zh: "意思：可以給我五張郵票嗎？",
+                usageZh: "Could I get … please 是購買物品時最有禮貌的說法。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "你想查詢是否有特別版郵票出售，可以怎麼問？",
+            chips: ["有沒有特別版郵票？", "有紀念郵票出售嗎？"],
+            encouragementZh: "明白了，你想查詢是否有特別版郵票。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Do you have any special edition stamps?",
+                zh: "意思：有沒有特別版的郵票？",
+                usageZh: "special edition 是「特別版、限定版」的常見說法。",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "negotiation",
+    title: "Negotiate a deal",
+    titleZh: "商務談判",
+    description: "提出立場、回應條件，達成雙方都能接受的共識。",
+    accent: "coral",
+    icon: "handshake",
+    level: "advanced",
+    chapters: [
+      {
+        id: "opening-position",
+        title: "提出立場",
+        goalZh: "學會清楚表明立場，並委婉回應不接受的條件。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "洽談開始時，你想表明自己的立場，可以怎麼說？",
+            chips: ["我方的底線是...", "我希望能夠..."],
+            encouragementZh: "明白了，你想表明自己的立場。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Let me start by outlining our position.",
+                zh: "意思：讓我先說明一下我方的立場。",
+                usageZh: "Let me start by … 是正式場合開場最常用的句型。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "對方提出的條件你未能接受，可以怎麼回應？",
+            chips: ["這個條件我方難以接受", "可以再商議一下嗎？"],
+            encouragementZh: "明白了，你想表達未能接受對方的條件。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "I'm afraid that doesn't quite work for us.",
+                zh: "意思：恐怕這個條件對我方來說不太可行。",
+                usageZh: "I'm afraid … doesn't work for us 是委婉拒絕條件的常見說法。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "你想提出一個折衷方案，可以怎麼說？",
+            chips: ["不如我們各讓一步", "有沒有折衷的方案？"],
+            encouragementZh: "明白了，你想提出折衷方案。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Perhaps we could meet somewhere in the middle.",
+                zh: "意思：或者我們可以各讓一步，取一個中間方案。",
+                usageZh: "meet in the middle 是「各讓一步、達成折衷」的固定說法。",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "reaching-compromise",
+        title: "達成共識",
+        goalZh: "學會確認共識、總結結果並安排跟進。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "你想確認雙方已經達成共識，可以怎麼問？",
+            chips: ["那麼是否代表大家都同意？", "可以確認一下嗎？"],
+            encouragementZh: "明白了，你想確認雙方是否已達成共識。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "So, are we in agreement on this?",
+                zh: "意思：那麼，我們對這一點是否已經達成共識？",
+                usageZh: "are we in agreement 是確認雙方共識時常用的問法。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想總結今次談判的結果，可以怎麼說？",
+            chips: ["讓我總結一下", "那麼我們就這樣決定"],
+            encouragementZh: "明白了，你想總結談判結果。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Let me just summarise what we've agreed on.",
+                zh: "意思：讓我總結一下我們已經達成的共識。",
+                usageZh: "summarise what we've agreed on 是正式場合總結共識時常用的說法。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "你想提出下一步跟進的安排，可以怎麼說？",
+            chips: ["接下來應該怎麼做？", "我們什麼時候再跟進？"],
+            encouragementZh: "明白了，你想提出下一步的安排。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Let's schedule a follow-up to finalise the details.",
+                zh: "意思：我們安排一次跟進會議，敲定詳細內容。",
+                usageZh: "schedule a follow-up 是安排後續會議的常見說法。",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "handling-complaints",
+    title: "Handle a complaint",
+    titleZh: "處理投訴",
+    description: "聆聽投訴、提出解決方案，妥善化解客人的不滿。",
+    accent: "lilac",
+    icon: "headset",
+    level: "advanced",
+    chapters: [
+      {
+        id: "listening-to-complaint",
+        title: "聆聽投訴",
+        goalZh: "學會先表達理解，再了解事情經過並作出保證。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "客人向你投訴服務有問題，你想先表達理解，可以怎麼說？",
+            chips: ["我理解你的感受", "對此我深感抱歉"],
+            encouragementZh: "明白了，你想先表達理解和歉意。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "I completely understand your frustration, and I'm sorry for the inconvenience.",
+                zh: "意思：我完全理解你的不滿，亦為造成的不便致歉。",
+                usageZh: "先表達理解和道歉，是處理投訴的第一步，能讓對方感受到被重視。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想進一步了解事情的經過，可以怎麼問？",
+            chips: ["可以詳細說明一下嗎？", "事情是怎麼發生的？"],
+            encouragementZh: "明白了，你想進一步了解事情經過。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Could you walk me through what happened?",
+                zh: "意思：可以詳細告訴我事情的經過嗎？",
+                usageZh: "walk me through 是「詳細說明過程」的常見說法。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "你想向客人保證會認真跟進，可以怎麼說？",
+            chips: ["我們會認真跟進", "我會盡快處理這件事"],
+            encouragementZh: "明白了，你想保證會認真跟進。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "I'll personally make sure this gets resolved.",
+                zh: "意思：我會親自確保這件事得到解決。",
+                usageZh: "personally make sure 強調親自負責，能讓對方更放心。",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "proposing-solution",
+        title: "提出解決方案",
+        goalZh: "學會提出補償方案並得體地結束對話。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "你想向客人提出補償方案，可以怎麼說？",
+            chips: ["我們可以退還部分費用", "可以為你更換一件新的"],
+            encouragementZh: "明白了，你想提出補償方案。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "We'd like to offer you a partial refund as an apology.",
+                zh: "意思：我們想以部分退款作為道歉。",
+                usageZh: "as an apology 明確表達補償的用意，語氣誠懇。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "客人對方案不滿意，你想提出另一個選擇，可以怎麼說？",
+            chips: ["不如試試這個方案", "還有其他方法嗎？"],
+            encouragementZh: "明白了，你想提出另一個選擇。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Would an upgrade to the next tier work better for you?",
+                zh: "意思：升級到下一個等級會不會更適合你？",
+                usageZh: "work better for you 是禮貌詢問對方是否更滿意某方案的說法。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "解決方案達成後，你想感謝客人的耐心，可以怎麼說？",
+            chips: ["謝謝你的耐心", "謝謝你的理解"],
+            encouragementZh: "明白了，你想感謝客人的耐心。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Thank you for your patience while we sorted this out.",
+                zh: "意思：謝謝你在我們處理這件事期間的耐心等候。",
+                usageZh: "sort this out 是「解決這件事」的常見說法，語氣自然。",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "public-speaking",
+    title: "Give a public speech",
+    titleZh: "公開演講",
+    description: "組織演講內容、應對問答，自信地面對聽眾。",
+    accent: "blue",
+    icon: "megaphone",
+    level: "advanced",
+    chapters: [
+      {
+        id: "structuring-speech",
+        title: "組織演講內容",
+        goalZh: "學會設計開場、帶出重點及自然過渡。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "演講開場，你想吸引聽眾的注意，可以怎麼說？",
+            chips: ["讓我從一個問題開始", "不如先分享一個故事"],
+            encouragementZh: "明白了，你想用問題或故事吸引聽眾注意。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Let me start with a question that changed the way I think.",
+                zh: "意思：讓我從一個改變了我想法的問題開始。",
+                usageZh: "用問題或故事開場，是吸引聽眾注意力的常見技巧。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想帶出演講的主要論點，可以怎麼說？",
+            chips: ["今天想和大家分享的是", "我的重點有三個"],
+            encouragementZh: "明白了，你想帶出演講的主要論點。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Today, I want to talk about three key ideas.",
+                zh: "意思：今天，我想談三個重要的觀點。",
+                usageZh: "用數字（three key ideas）預告內容架構，有助聽眾跟上思路。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "你想在段落之間自然過渡，可以怎麼說？",
+            chips: ["說完這一點，接下來談下一個", "這帶出另一個重點"],
+            encouragementZh: "明白了，你想在段落之間自然過渡。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "That brings me to my next point.",
+                zh: "意思：這帶出了我的下一個重點。",
+                usageZh: "That brings me to … 是段落之間自然過渡的常用句型。",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "handling-qa",
+        title: "應對問答環節",
+        goalZh: "學會應對突發問題、澄清誤解並得體結尾。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "聽眾問了一個你未準備好的問題，可以怎麼回應？",
+            chips: ["這個問題我需要再想一下", "我稍後補充回答"],
+            encouragementZh: "明白了，你想坦誠回應未準備好的問題。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "That's a great question — let me think about that for a moment.",
+                zh: "意思：這是個好問題，讓我想一想。",
+                usageZh: "讚賞問題並爭取思考時間，是應對突發問題的常見技巧。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想澄清聽眾誤解了你的意思，可以怎麼說？",
+            chips: ["我想澄清一下", "我的意思並非如此"],
+            encouragementZh: "明白了，你想澄清對方的誤解。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "To clarify, that's not quite what I meant.",
+                zh: "意思：澄清一下，我的意思並非如此。",
+                usageZh: "To clarify 是禮貌澄清誤解、避免衝突的常用開場語。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "問答環節結束，你想感謝聽眾的參與，可以怎麼說？",
+            chips: ["謝謝大家的提問", "謝謝各位的參與"],
+            encouragementZh: "明白了，你想感謝聽眾的參與。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Thank you all for such thoughtful questions.",
+                zh: "意思：謝謝大家提出這麼有深度的問題。",
+                usageZh: "thoughtful questions 稱讚聽眾提問有深度，是得體的結尾方式。",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "networking-event",
+    title: "Work a networking event",
+    titleZh: "社交場合",
+    description: "自然寒暄、交換聯絡方式，建立有意義的人脈。",
+    accent: "mint",
+    icon: "users",
+    level: "advanced",
+    chapters: [
+      {
+        id: "making-small-talk",
+        title: "寒暄閒聊",
+        goalZh: "學會主動開始對話並自然轉換話題。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "在社交場合想主動和陌生人開始對話，可以怎麼說？",
+            chips: ["你也是第一次來這個活動嗎？", "這個活動很有意思"],
+            encouragementZh: "明白了，你想主動開始對話。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Is this your first time at one of these events?",
+                zh: "意思：這是你第一次參加這類活動嗎？",
+                usageZh: "用一個輕鬆的問題開場，是打開話題最自然的方法。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想介紹自己的工作範疇，可以怎麼說？",
+            chips: ["我目前在...從事...", "我主要負責的是..."],
+            encouragementZh: "明白了，你想介紹自己的工作範疇。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "I work in marketing, mainly focusing on digital campaigns.",
+                zh: "意思：我從事市場推廣，主要專注於數碼推廣活動。",
+                usageZh: "mainly focusing on … 可以具體補充自己的專長範疇。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "對話開始冷場，你想轉換話題，可以怎麼說？",
+            chips: ["說起來，你怎麼看...", "換個話題，你有沒有..."],
+            encouragementZh: "明白了，你想自然地轉換話題。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "By the way, what did you think of the keynote speech?",
+                zh: "意思：說起來，你覺得剛才的主題演講怎麼樣？",
+                usageZh: "By the way 是自然轉換話題最常用的過渡語。",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "exchanging-contacts",
+        title: "交換聯絡方式",
+        goalZh: "學會索取聯絡方式並得體地道別。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "你想向對方索取聯絡方式，可以怎麼說？",
+            chips: ["可以交換一下名片嗎？", "可以加一下LinkedIn嗎？"],
+            encouragementZh: "明白了，你想索取對方的聯絡方式。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Would it be okay to exchange contact details?",
+                zh: "意思：可以交換一下聯絡方式嗎？",
+                usageZh: "Would it be okay to … 是禮貌提出請求的常見句型。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想約對方之後再詳談，可以怎麼說？",
+            chips: ["不如之後找時間再詳談", "有機會約你喝杯咖啡"],
+            encouragementZh: "明白了，你想約對方之後再詳談。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "I'd love to grab a coffee sometime and continue this conversation.",
+                zh: "意思：我想找機會約你喝杯咖啡，繼續這個話題。",
+                usageZh: "grab a coffee 是「約見面小聚」的常見輕鬆說法。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "道別時你想表達今次交流很有收穫，可以怎麼說？",
+            chips: ["今天真的獲益良多", "很高興認識你"],
+            encouragementZh: "明白了，你想表達今次交流的收穫。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "It was great chatting with you — I really enjoyed our conversation.",
+                zh: "意思：很高興跟你聊天，這次對話讓我獲益良多。",
+                usageZh: "道別前總結對話的正面感受，是留下好印象的常見做法。",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "giving-feedback",
+    title: "Give feedback",
+    titleZh: "給予意見",
+    description: "提出建設性意見，並妥善處理較困難的對話。",
+    accent: "yellow",
+    icon: "message-square",
+    level: "advanced",
+    chapters: [
+      {
+        id: "constructive-feedback",
+        title: "建設性意見",
+        goalZh: "學會禮貌開口、具體指出改善之處並正面總結。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "你想向同事提出建設性意見，可以怎麼開口？",
+            chips: ["我有一些想法想跟你分享", "可以說一下我的想法嗎？"],
+            encouragementZh: "明白了，你想禮貌地開口提出意見。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Do you have a moment? I have some feedback to share.",
+                zh: "意思：你有時間嗎？我有一些意見想分享。",
+                usageZh: "先確認對方有沒有時間，是提出意見前的禮貌做法。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想具體指出可以改善的地方，可以怎麼說？",
+            chips: ["這部分或許可以再加強", "如果...會更好"],
+            encouragementZh: "明白了，你想具體指出可以改善的地方。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "One area that could use some improvement is the introduction.",
+                zh: "意思：其中一個可以改善的地方是開場部分。",
+                usageZh: "One area that could use some improvement 語氣溫和，避免直接批評。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "你想以正面的話總結意見，可以怎麼說？",
+            chips: ["不過整體來說做得很好", "我覺得你已經進步了很多"],
+            encouragementZh: "明白了，你想以正面的話總結意見。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Overall, though, this is really solid work.",
+                zh: "意思：不過整體來說，這份工作做得相當扎實。",
+                usageZh: "用 overall, though 帶出正面總結，令意見更容易被接受。",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "difficult-conversation",
+        title: "較困難的對話",
+        goalZh: "學會指出重複發生的問題、緩和防禦反應並確認下一步。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "你需要指出對方一個重複發生的問題，可以怎麼開口？",
+            chips: ["這件事已經發生了幾次", "我想跟你談談這個情況"],
+            encouragementZh: "明白了，你想指出一個重複發生的問題。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "I wanted to talk to you because this has come up a few times now.",
+                zh: "意思：我想跟你談談，因為這件事已經發生了幾次。",
+                usageZh: "this has come up a few times 客觀陳述事實，避免情緒化指責。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "對方對你的意見有防禦反應，你想緩和氣氛，可以怎麼說？",
+            chips: ["我不是想怪你", "我只是想幫忙"],
+            encouragementZh: "明白了，你想緩和對方的防禦反應。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "I'm not trying to point fingers — I just want us to find a solution together.",
+                zh: "意思：我不是想指責誰，只是想我們一起找出解決方法。",
+                usageZh: "point fingers 是「指責、怪責」的常見說法，否定它可以緩和對方情緒。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "對話結束，你想確認雙方都清楚下一步，可以怎麼說？",
+            chips: ["那麼我們下一步怎麼做？", "希望之後會有改善"],
+            encouragementZh: "明白了，你想確認雙方都清楚下一步。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Let's agree on what we'll both do differently going forward.",
+                zh: "意思：讓我們確認一下大家之後會怎麼做得不一樣。",
+                usageZh: "going forward 是「之後、往後」的常見商務用語。",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "debate-discussion",
+    title: "Debate and discuss",
+    titleZh: "辯論與討論",
+    description: "提出論點、回應反駁，有條理地捍衛自己的立場。",
+    accent: "coral",
+    icon: "swords",
+    level: "proficient",
+    chapters: [
+      {
+        id: "presenting-argument",
+        title: "提出論點",
+        goalZh: "學會陳述立場、用數據支持並預先回應反駁。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "辯論開始，你想清楚陳述自己的立場，可以怎麼說？",
+            chips: ["我的立場是...", "我認為...的原因有三個"],
+            encouragementZh: "明白了，你想清楚陳述自己的立場。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "My position is that we should prioritise long-term sustainability over short-term gains.",
+                zh: "意思：我的立場是，我們應該將長遠可持續性置於短期利益之前。",
+                usageZh: "My position is that … 是辯論中清楚表明立場的正式句型。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想用數據或例子支持自己的論點，可以怎麼說？",
+            chips: ["有數據可以證明...", "舉個例子..."],
+            encouragementZh: "明白了，你想用數據或例子支持論點。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "The data clearly supports this — studies show a 40% improvement.",
+                zh: "意思：數據清楚支持這一點——研究顯示有百分之四十的改善。",
+                usageZh: "用具體數字支持論點，可以大大增加說服力。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "你想預先回應對方可能提出的反駁，可以怎麼說？",
+            chips: ["有人可能會說...", "但這樣想的問題在於"],
+            encouragementZh: "明白了，你想預先回應對方可能提出的反駁。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Some might argue otherwise, but that overlooks a key factor.",
+                zh: "意思：有些人可能持不同意見，但這忽略了一個關鍵因素。",
+                usageZh: "Some might argue otherwise, but … 是預先反駁對方觀點的常見句型。",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "rebutting-counterpoint",
+        title: "回應反駁",
+        goalZh: "學會先肯定對方、指出論點漏洞並總結立場。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "對方提出反駁，你想先承認他論點的一部分，可以怎麼說？",
+            chips: ["你提到的這一點很有道理", "我明白你的憂慮"],
+            encouragementZh: "明白了，你想先承認對方論點的一部分。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "You raise a fair point, but let me offer another perspective.",
+                zh: "意思：你提出的這一點很合理，但讓我提供另一個角度。",
+                usageZh: "先肯定對方觀點再提出反駁，是辯論中更有說服力的技巧。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想指出對方論點的漏洞，可以怎麼說？",
+            chips: ["這個論點忽略了一件事", "還有一個問題未解決"],
+            encouragementZh: "明白了，你想指出對方論點的漏洞。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "That argument doesn't account for the long-term costs involved.",
+                zh: "意思：這個論點沒有考慮到當中的長期成本。",
+                usageZh: "doesn't account for … 是指出論點漏洞時常用、語氣客觀的說法。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "辯論結束，你想重申自己的立場作總結，可以怎麼說？",
+            chips: ["總括來說，我依然認為", "回到最初的論點"],
+            encouragementZh: "明白了，你想重申立場作總結。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "In conclusion, the evidence still points to the same answer.",
+                zh: "意思：總括來說，證據依然指向同一個結論。",
+                usageZh: "In conclusion 是正式總結論點時最常用的開場語。",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "persuasion",
+    title: "Persuade with confidence",
+    titleZh: "說服技巧",
+    description: "建立論據、回應異議，有技巧地說服對方。",
+    accent: "lilac",
+    icon: "target",
+    level: "proficient",
+    chapters: [
+      {
+        id: "building-case",
+        title: "建立論據",
+        goalZh: "學會提出提案、強調好處並引用成功案例。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "你想向對方提出一個提案，可以怎麼開口？",
+            chips: ["我有一個提議想和你討論", "不如聽聽這個想法"],
+            encouragementZh: "明白了，你想提出一個提案。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "I'd like to walk you through a proposal that could benefit us both.",
+                zh: "意思：我想向你說明一個對雙方都有利的提案。",
+                usageZh: "walk you through 表示「詳細講解」，適合正式提案場合。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想強調這個提案對對方的好處，可以怎麼說？",
+            chips: ["這對你來說會有什麼好處", "對你最大的好處是"],
+            encouragementZh: "明白了，你想強調提案對對方的好處。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "From your perspective, this could save you significant time and cost.",
+                zh: "意思：從你的角度來看，這可以為你節省大量時間和成本。",
+                usageZh: "From your perspective 站在對方角度出發，令說服更有效。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "你想引用其他人成功的例子增加說服力，可以怎麼說？",
+            chips: ["其他公司也曾這樣做", "有實際案例可以參考"],
+            encouragementZh: "明白了，你想引用成功案例增加說服力。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Several other companies have already seen great results with this approach.",
+                zh: "意思：已經有幾間公司透過這個方法取得了好成果。",
+                usageZh: "引用第三方案例，是增加說服力常見的技巧。",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "addressing-objections",
+        title: "回應異議",
+        goalZh: "學會了解疑慮原因、提出解決方法並降低決策風險。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "對方對你的提案有疑慮，你想先了解原因，可以怎麼問？",
+            chips: ["是什麼讓你有這個顧慮？", "可以多說一些你的想法嗎？"],
+            encouragementZh: "明白了，你想先了解對方疑慮的原因。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "What's the main concern holding you back?",
+                zh: "意思：主要是什麼讓你猶豫？",
+                usageZh: "holding you back 表示「令人卻步的原因」，是了解疑慮的常用問法。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想針對對方的疑慮提出解決方法，可以怎麼說？",
+            chips: ["這個問題我們可以這樣處理", "其實有方法可以解決"],
+            encouragementZh: "明白了，你想針對疑慮提出解決方法。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "That's a valid concern — here's how we can address it.",
+                zh: "意思：這是一個合理的顧慮，這是我們可以處理的方式。",
+                usageZh: "That's a valid concern 先肯定對方顧慮合理，再提出解決方法。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "對方仍然猶豫，你想提出一個低風險的試行方案，可以怎麼說？",
+            chips: ["不如先試行一個月", "可以從小規模開始"],
+            encouragementZh: "明白了，你想提出低風險的試行方案。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Why don't we start with a small trial to see how it goes?",
+                zh: "意思：不如我們先做一個小型試驗，看看效果如何？",
+                usageZh: "a small trial 降低對方的決策風險，是常見的說服策略。",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "cultural-nuance",
+    title: "Communicate across cultures",
+    titleZh: "文化差異溝通",
+    description: "解讀語境、調整語氣，跨文化溝通更得體。",
+    accent: "blue",
+    icon: "globe",
+    level: "proficient",
+    chapters: [
+      {
+        id: "reading-context",
+        title: "解讀語境",
+        goalZh: "學會確認理解、禮貌指出文化差異並了解對方做法。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "你留意到對方說話比較含蓄，想確認他真正的意思，可以怎麼問？",
+            chips: ["你的意思是不是...", "可以說清楚一點嗎？"],
+            encouragementZh: "明白了，你想確認對方真正的意思。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Just to make sure I understand correctly, are you saying...?",
+                zh: "意思：為了確保我理解正確，你的意思是不是...？",
+                usageZh: "是委婉確認理解的常見說法，不會令對方尷尬。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想禮貌地指出文化上的不同做法，可以怎麼說？",
+            chips: ["在我們那邊通常會...", "這方面可能和你們不同"],
+            encouragementZh: "明白了，你想禮貌地指出文化差異。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "In my culture, we tend to approach this a bit differently.",
+                zh: "意思：在我的文化中，我們處理這件事的方式會有些不同。",
+                usageZh: "tend to approach … differently 語氣中性，避免暗示任何一方做法有錯。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "你想邀請對方分享他們的文化做法，可以怎麼問？",
+            chips: ["在你們那邊通常怎麼做？", "可以說說你們的做法嗎？"],
+            encouragementZh: "明白了，你想邀請對方分享他們的文化做法。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "How is this typically handled where you're from?",
+                zh: "意思：在你的地方通常會怎麼處理這件事？",
+                usageZh: "where you're from 是禮貌詢問對方文化背景的自然說法。",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "adapting-tone",
+        title: "調整語氣",
+        goalZh: "學會因應對方偏好調整直接或婉轉的表達方式。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "你發現對方偏好比較直接的溝通方式，你想調整自己的表達，可以怎麼說？",
+            chips: ["讓我直接說重點", "簡單來說就是"],
+            encouragementZh: "明白了，你想用更直接的方式表達。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Let me get straight to the point.",
+                zh: "意思：讓我直接說重點。",
+                usageZh: "get straight to the point 表示「直入正題」，適合偏好直接溝通的對象。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你發現對方偏好比較婉轉的溝通方式，你想調整語氣，可以怎麼說？",
+            chips: ["或許可以考慮一下", "這可能是一個方向"],
+            encouragementZh: "明白了，你想用更婉轉的方式表達。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "It might be worth considering an alternative approach.",
+                zh: "意思：或許值得考慮另一個做法。",
+                usageZh: "It might be worth considering 語氣婉轉，適合偏好含蓄溝通的對象。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "你想總結：不同文化的溝通方式沒有對錯之分，可以怎麼說？",
+            chips: ["兩種做法都各有優點", "最重要的是互相尊重"],
+            encouragementZh: "明白了，你想總結不同文化溝通方式各有優點。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Neither approach is right or wrong — it's just about understanding each other.",
+                zh: "意思：兩種做法都沒有對錯之分，最重要的是互相理解。",
+                usageZh: "帶出文化差異溝通的核心：理解，而非批判。",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "crisis-communication",
+    title: "Communicate through a crisis",
+    titleZh: "危機溝通",
+    description: "傳達壞消息、應對反應，帶領團隊度過難關。",
+    accent: "coral",
+    icon: "alert-triangle",
+    level: "proficient",
+    chapters: [
+      {
+        id: "delivering-bad-news",
+        title: "傳達壞消息",
+        goalZh: "學會宣布壞消息、說明原因並展望下一步。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "你需要向團隊宣布一個不好的消息，可以怎麼開口？",
+            chips: ["我有些消息想跟大家說", "這個消息可能不太好"],
+            encouragementZh: "明白了，你想準備向團隊宣布壞消息。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "I need to share some difficult news with the team.",
+                zh: "意思：我需要向團隊分享一些不太好的消息。",
+                usageZh: "difficult news 語氣正式而克制，適合宣布壞消息的開場。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想清楚說明事情發生的原因，可以怎麼說？",
+            chips: ["事情發生的原因是...", "背景是這樣的"],
+            encouragementZh: "明白了，你想清楚說明事情發生的原因。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Let me explain exactly what led to this situation.",
+                zh: "意思：讓我準確說明是什麼導致了這個情況。",
+                usageZh: "exactly what led to this situation 表示會提供完整、準確的原因說明。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "你想安撫團隊的情緒並展望下一步，可以怎麼說？",
+            chips: ["我知道這個消息令人失望", "但我們會有下一步的計劃"],
+            encouragementZh: "明白了，你想安撫團隊情緒並展望下一步。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "I know this is disappointing, but here's how we'll move forward.",
+                zh: "意思：我知道這令人失望，但這是我們接下來的計劃。",
+                usageZh: "move forward 表示「向前邁進」，能為壞消息帶來正面的結尾。",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "managing-reactions",
+        title: "應對反應",
+        goalZh: "學會安撫激動情緒、邀請提問並重申信心。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "有人對壞消息反應激動，你想先安撫他，可以怎麼說？",
+            chips: ["我明白你的反應", "這個反應很合理"],
+            encouragementZh: "明白了，你想先安撫對方激動的情緒。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "I completely understand why you'd feel that way.",
+                zh: "意思：我完全明白你為什麼會有這樣的感受。",
+                usageZh: "先確認對方情緒合理，再處理問題，是危機溝通的重要一步。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想邀請大家提出問題或憂慮，可以怎麼說？",
+            chips: ["大家有什麼想問的嗎？", "有什麼擔心可以說出來"],
+            encouragementZh: "明白了，你想邀請大家提出問題或憂慮。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Please feel free to raise any questions or concerns you have.",
+                zh: "意思：請大家隨時提出任何問題或憂慮。",
+                usageZh: "feel free to raise … 是邀請對方開放提問的正式說法。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "會議結束，你想重申你對團隊的信心，可以怎麼說？",
+            chips: ["我對這個團隊有信心", "我們一定能撐過去"],
+            encouragementZh: "明白了，你想重申對團隊的信心。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "I have full confidence that we'll get through this together.",
+                zh: "意思：我完全有信心，我們會一起度過這個難關。",
+                usageZh: "強調團結，是結束危機溝通的正面收尾。",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "leadership-communication",
+    title: "Lead with communication",
+    titleZh: "領導溝通",
+    description: "激勵團隊、分配任務，展現有效的領導溝通。",
+    accent: "yellow",
+    icon: "crown",
+    level: "proficient",
+    chapters: [
+      {
+        id: "motivating-team",
+        title: "激勵團隊",
+        goalZh: "學會肯定努力、描繪願景並在困難中鼓勵士氣。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "你想向團隊表達他們的努力有被看到，可以怎麼說？",
+            chips: ["我看到大家的努力", "真的很感激大家"],
+            encouragementZh: "明白了，你想表達對團隊努力的肯定。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "I want you to know that your hard work hasn't gone unnoticed.",
+                zh: "意思：我想讓你知道，你的努力並沒有被忽視。",
+                usageZh: "hasn't gone unnoticed 是「並非沒被留意到」的正式說法，比直接稱讚更有分量。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想為團隊描繪一個清晰的共同目標，可以怎麼說？",
+            chips: ["我們的共同目標是...", "如果做到，會是怎樣的局面"],
+            encouragementZh: "明白了，你想描繪一個清晰的共同目標。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Here's the vision we're all working towards.",
+                zh: "意思：這就是我們大家共同努力的目標。",
+                usageZh: "the vision we're all working towards 是描繪共同願景常用的正式說法。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "遇到困難時，你想鼓勵團隊保持士氣，可以怎麼說？",
+            chips: ["我知道現在很難熬", "但我們已經走了很遠"],
+            encouragementZh: "明白了，你想鼓勵團隊在困難中保持士氣。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "I know this is tough, but look how far we've already come.",
+                zh: "意思：我知道這段時間很艱難，但看看我們已經走了多遠。",
+                usageZh: "提醒團隊已有的進展，是鼓勵士氣的有效方法。",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "delegating-tasks",
+        title: "分配任務",
+        goalZh: "學會清楚交代任務、表達信任並提供支援。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "你想向下屬清楚交代一項任務，可以怎麼說？",
+            chips: ["這個任務想交給你", "希望你可以負責這部分"],
+            encouragementZh: "明白了，你想清楚交代一項任務。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "I'd like you to take the lead on this project.",
+                zh: "意思：我想讓你負責主導這個項目。",
+                usageZh: "take the lead on … 是正式交代負責範圍的常見說法。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想向對方表達信任、放手讓他決定，可以怎麼說？",
+            chips: ["這方面我信任你的判斷", "你可以自己決定怎麼做"],
+            encouragementZh: "明白了，你想表達信任並放手讓對方決定。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "I trust your judgement — feel free to make the call on this.",
+                zh: "意思：我信任你的判斷，這方面你可以自己決定。",
+                usageZh: "make the call 是「做決定」的常見說法，語氣輕鬆自然。",
+              },
+            ],
+          },
+          {
+            id: "t3",
+            questionZh: "分配任務後，你想提醒對方有需要可以隨時找你，可以怎麼說？",
+            chips: ["有需要隨時找我", "不清楚可以問我"],
+            encouragementZh: "明白了，你想提醒對方有需要可以隨時找你。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "If you need any support along the way, my door is always open.",
+                zh: "意思：如果過程中需要任何支援，我隨時歡迎你來找我。",
+                usageZh: "是表達自己隨時願意提供協助的慣用說法。",
               },
             ],
           },

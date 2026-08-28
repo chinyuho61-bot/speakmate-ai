@@ -50,19 +50,18 @@ function computeStreakDays(completedAtIso: string[]): number {
 
 // Roadmap band order — must match the sequence scenarios are authored in
 // (shared/scenarios.ts appends higher bands after lower ones).
-const BAND_ORDER: ScenarioLevel[] = ["beginner", "intermediate"];
+const BAND_ORDER: ScenarioLevel[] = ["beginner", "intermediate", "advanced", "proficient"];
 function bandRank(level: ScenarioLevel): number {
   return BAND_ORDER.indexOf(level);
 }
 
 // The level picked at onboarding decides which band a learner starts
-// unlocked at — an "intermediate" (or higher) learner shouldn't be forced
-// to redo 初級 before reaching 中級. Levels above the highest authored band
-// just start at that highest band.
+// unlocked at, so they shouldn't be forced to redo lower bands — the four
+// LearnerLevel values map 1:1 onto the four ScenarioLevel bands.
 function startingBandFor(userLevel: string | null): ScenarioLevel {
-  if (userLevel === "intermediate" || userLevel === "advanced" || userLevel === "native-like") {
-    return "intermediate";
-  }
+  if (userLevel === "native-like") return "proficient";
+  if (userLevel === "advanced") return "advanced";
+  if (userLevel === "intermediate") return "intermediate";
   return "beginner";
 }
 

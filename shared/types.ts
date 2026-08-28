@@ -67,14 +67,27 @@ export type ScenarioIcon =
   | "presentation-chart"
   | "map-trifold"
   | "stethoscope"
-  | "landmark";
+  | "landmark"
+  | "shopping-bag"
+  | "house"
+  | "mail"
+  | "handshake"
+  | "headset"
+  | "megaphone"
+  | "users"
+  | "message-square"
+  | "swords"
+  | "target"
+  | "globe"
+  | "alert-triangle"
+  | "crown";
 
 // Groups scenarios into roadmap sections the learner unlocks in order —
-// all "beginner" scenarios must be completed before any "intermediate"
-// scenario unlocks, regardless of the level picked at onboarding (that
-// picked level is diagnostic only, matching the reference app's behaviour
-// of always starting everyone at the first band).
-export type ScenarioLevel = "beginner" | "intermediate";
+// each band must be completed before the next unlocks, UNLESS the level
+// picked at onboarding already starts the learner past it (see
+// startingBandFor in server/routes/progress.ts) — the four bands map 1:1
+// onto the four LearnerLevel values.
+export type ScenarioLevel = "beginner" | "intermediate" | "advanced" | "proficient";
 
 export type Scenario = {
   id: string;

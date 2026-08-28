@@ -74,6 +74,13 @@ function groupByLevel(list: Scenario[]): { level: Scenario["level"]; items: Scen
   return bands;
 }
 
+const LEVEL_LABEL_KEY: Record<Scenario["level"], "home.levelBeginner" | "home.levelIntermediate" | "home.levelAdvanced" | "home.levelProficient"> = {
+  beginner: "home.levelBeginner",
+  intermediate: "home.levelIntermediate",
+  advanced: "home.levelAdvanced",
+  proficient: "home.levelProficient",
+};
+
 function buildRoadPath(count: number): string {
   if (count === 0) return "";
   const points = Array.from({ length: count }, (_, i) => gridNodeCenter(i));
@@ -232,7 +239,7 @@ export function HomePage() {
           {groupByLevel(scenarios).map((band) => (
             <div key={band.level} className="level-band">
               <div className="level-divider">
-                <span>{t(band.level === "beginner" ? "home.levelBeginner" : "home.levelIntermediate")}</span>
+                <span>{t(LEVEL_LABEL_KEY[band.level])}</span>
               </div>
               <div className="roadgrid" style={{ height: gridHeight(band.items.length) }}>
                 <svg
