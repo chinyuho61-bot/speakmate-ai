@@ -1011,6 +1011,18 @@ export const scenarios: Scenario[] = [
               { keywords: ["自駕遊"], models: [{ labelZh: "Riley 教你講", en: "In my free time, I enjoy going on road trips.", zh: "意思：我空閒時喜歡自駕遊。", usageZh: "enjoy 後面直接加 -ing，不需要加 to。" }] },
               { keywords: ["冥想"], models: [{ labelZh: "Riley 教你講", en: "In my free time, I enjoy meditating.", zh: "意思：我空閒時喜歡冥想。", usageZh: "enjoy 後面直接加 -ing，不需要加 to。" }] },
               { keywords: ["靜觀"], models: [{ labelZh: "Riley 教你講", en: "In my free time, I enjoy practising mindfulness.", zh: "意思：我空閒時喜歡練習靜觀。", usageZh: "enjoy 後面直接加 -ing，不需要加 to。" }] },
+              { keywords: ["普拉提"], models: [{ labelZh: "Riley 教你講", en: "In my free time, I enjoy doing Pilates.", zh: "意思：我空閒時喜歡做普拉提。", usageZh: "enjoy 後面直接加 -ing，不需要加 to。" }] },
+              { keywords: ["拳擊操", "搏擊操"], models: [{ labelZh: "Riley 教你講", en: "In my free time, I enjoy boxercise classes.", zh: "意思：我空閒時喜歡上拳擊操課程。", usageZh: "enjoy 後面直接加 -ing，不需要加 to。" }] },
+              { keywords: ["尊巴", "排舞"], models: [{ labelZh: "Riley 教你講", en: "In my free time, I enjoy Zumba classes.", zh: "意思：我空閒時喜歡上尊巴課程。", usageZh: "enjoy 後面直接加 -ing，不需要加 to。" }] },
+              { keywords: ["動感單車", "室內單車"], models: [{ labelZh: "Riley 教你講", en: "In my free time, I enjoy spin classes.", zh: "意思：我空閒時喜歡上動感單車課程。", usageZh: "enjoy 後面直接加 -ing，不需要加 to。" }] },
+              { keywords: ["睇波", "睇波賽", "睇足球賽", "睇NBA"], models: [{ labelZh: "Riley 教你講", en: "In my free time, I enjoy watching sports.", zh: "意思：我空閒時喜歡看體育比賽。", usageZh: "enjoy 後面直接加 -ing，不需要加 to。" }] },
+              { keywords: ["遛狗", "蹓狗"], models: [{ labelZh: "Riley 教你講", en: "In my free time, I enjoy walking my dog.", zh: "意思：我空閒時喜歡遛狗。", usageZh: "enjoy 後面直接加 -ing，不需要加 to。" }] },
+              { keywords: ["擼貓", "陪貓貓", "撸猫"], models: [{ labelZh: "Riley 教你講", en: "In my free time, I enjoy spending time with my cat.", zh: "意思：我空閒時喜歡陪伴我的貓。", usageZh: "enjoy 後面直接加 -ing，不需要加 to。" }] },
+              { keywords: ["踢毽"], models: [{ labelZh: "Riley 教你講", en: "In my free time, I enjoy playing shuttlecock.", zh: "意思：我空閒時喜歡踢毽子。", usageZh: "enjoy 後面直接加 -ing，不需要加 to。" }] },
+              { keywords: ["砌模型"], models: [{ labelZh: "Riley 教你講", en: "In my free time, I enjoy building model kits.", zh: "意思：我空閒時喜歡砌模型。", usageZh: "enjoy 後面直接加 -ing，不需要加 to。" }] },
+              { keywords: ["滾軸溜冰", "踩滾軸"], models: [{ labelZh: "Riley 教你講", en: "In my free time, I enjoy roller skating.", zh: "意思：我空閒時喜歡玩滾軸溜冰。", usageZh: "enjoy 後面直接加 -ing，不需要加 to。" }] },
+              { keywords: ["化妝"], models: [{ labelZh: "Riley 教你講", en: "In my free time, I enjoy doing makeup.", zh: "意思：我空閒時喜歡化妝。", usageZh: "enjoy 後面直接加 -ing，不需要加 to。" }] },
+              { keywords: ["整蠟燭", "香薰蠟燭"], models: [{ labelZh: "Riley 教你講", en: "In my free time, I enjoy making candles.", zh: "意思：我空閒時喜歡整蠟燭。", usageZh: "enjoy 後面直接加 -ing，不需要加 to。" }] },
             ],
           },
           {
@@ -1319,6 +1331,705 @@ export const scenarios: Scenario[] = [
                 en: "Could I have the grilled chicken, please?",
                 zh: "意思：可以給我烤雞嗎？",
                 usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+              },
+            ],
+            // Matched against the learner's own typed answer (see `variants`
+            // on the Turn type) — covers common HK/Western dishes so naming
+            // a specific dish teaches that dish's sentence, instead of
+            // always defaulting to the fixed grilled-chicken example.
+            variants: [
+              {
+                keywords: ["炸薯條", "薯條"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the fries, please?",
+                    zh: "意思：可以給我炸薯條嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["牛扒", "牛排"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the steak, please?",
+                    zh: "意思：可以給我牛扒嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["豬扒"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the pork chop, please?",
+                    zh: "意思：可以給我豬扒嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["魚柳"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the fish fillet, please?",
+                    zh: "意思：可以給我魚柳嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["三文魚"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the salmon, please?",
+                    zh: "意思：可以給我三文魚嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["意粉", "意大利粉"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the pasta, please?",
+                    zh: "意思：可以給我意粉嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["薄餅", "pizza", "披薩"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the pizza, please?",
+                    zh: "意思：可以給我薄餅嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["漢堡", "漢堡包"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the burger, please?",
+                    zh: "意思：可以給我漢堡嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["熱狗"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the hot dog, please?",
+                    zh: "意思：可以給我熱狗嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["三文治"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the sandwich, please?",
+                    zh: "意思：可以給我三文治嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["沙律", "沙拉"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the salad, please?",
+                    zh: "意思：可以給我沙律嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["炸雞"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the fried chicken, please?",
+                    zh: "意思：可以給我炸雞嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["雞翼"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the chicken wings, please?",
+                    zh: "意思：可以給我雞翼嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["雞胸"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the chicken breast, please?",
+                    zh: "意思：可以給我雞胸嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["焗豬扒飯"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the baked pork chop rice, please?",
+                    zh: "意思：可以給我焗豬扒飯嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["牛肉飯"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the beef rice, please?",
+                    zh: "意思：可以給我牛肉飯嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["叉燒飯"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the char siu rice, please?",
+                    zh: "意思：可以給我叉燒飯嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["燒鴨飯"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the roast duck rice, please?",
+                    zh: "意思：可以給我燒鴨飯嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["燒味飯"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the roast meat rice, please?",
+                    zh: "意思：可以給我燒味飯嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["白切雞"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the poached chicken, please?",
+                    zh: "意思：可以給我白切雞嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["咖喱雞"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the chicken curry, please?",
+                    zh: "意思：可以給我咖喱雞嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["咖喱牛腩"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the beef brisket curry, please?",
+                    zh: "意思：可以給我咖喱牛腩嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["星洲炒米"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the Singapore noodles, please?",
+                    zh: "意思：可以給我星洲炒米嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["揚州炒飯"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the Yangzhou fried rice, please?",
+                    zh: "意思：可以給我揚州炒飯嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["蛋炒飯"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the egg fried rice, please?",
+                    zh: "意思：可以給我蛋炒飯嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["乾炒牛河"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the beef chow fun, please?",
+                    zh: "意思：可以給我乾炒牛河嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["牛腩麵"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the beef brisket noodles, please?",
+                    zh: "意思：可以給我牛腩麵嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["雲吞麵"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the wonton noodles, please?",
+                    zh: "意思：可以給我雲吞麵嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["魚蛋粉"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the fish ball noodles, please?",
+                    zh: "意思：可以給我魚蛋粉嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["老火湯"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the slow-cooked soup, please?",
+                    zh: "意思：可以給我老火湯嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["通粉"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the macaroni, please?",
+                    zh: "意思：可以給我通粉嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["米線"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the rice noodles, please?",
+                    zh: "意思：可以給我米線嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["腸粉"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the rice noodle rolls, please?",
+                    zh: "意思：可以給我腸粉嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["蝦餃"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the har gow, please?",
+                    zh: "意思：可以給我蝦餃嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["燒賣"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the siu mai, please?",
+                    zh: "意思：可以給我燒賣嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["叉燒包"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the char siu bao, please?",
+                    zh: "意思：可以給我叉燒包嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["奶黃包"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the custard bun, please?",
+                    zh: "意思：可以給我奶黃包嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["蘿蔔糕"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the turnip cake, please?",
+                    zh: "意思：可以給我蘿蔔糕嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["春卷"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the spring rolls, please?",
+                    zh: "意思：可以給我春卷嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["炒飯"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the fried rice, please?",
+                    zh: "意思：可以給我炒飯嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["炒麵"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the fried noodles, please?",
+                    zh: "意思：可以給我炒麵嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["煲仔飯"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the clay pot rice, please?",
+                    zh: "意思：可以給我煲仔飯嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["白飯"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the steamed rice, please?",
+                    zh: "意思：可以給我白飯嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["炒青菜", "炒菜"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the stir-fried vegetables, please?",
+                    zh: "意思：可以給我炒青菜嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["壽司"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the sushi, please?",
+                    zh: "意思：可以給我壽司嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["刺身"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the sashimi, please?",
+                    zh: "意思：可以給我刺身嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["拉麵"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the ramen, please?",
+                    zh: "意思：可以給我拉麵嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["天婦羅"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the tempura, please?",
+                    zh: "意思：可以給我天婦羅嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["日式咖喱飯", "咖喱飯"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the curry rice, please?",
+                    zh: "意思：可以給我日式咖喱飯嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["照燒雞"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the teriyaki chicken, please?",
+                    zh: "意思：可以給我照燒雞嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["丼飯"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the rice bowl, please?",
+                    zh: "意思：可以給我丼飯嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["味噌湯"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the miso soup, please?",
+                    zh: "意思：可以給我味噌湯嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["湯"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the soup, please?",
+                    zh: "意思：可以給我湯嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["薯仔", "焗薯"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the baked potato, please?",
+                    zh: "意思：可以給我薯仔嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["漢堡扒"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the beef patty, please?",
+                    zh: "意思：可以給我漢堡扒嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["羊架"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the rack of lamb, please?",
+                    zh: "意思：可以給我羊架嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["羊肉"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the lamb, please?",
+                    zh: "意思：可以給我羊肉嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["燒鵝"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the roast goose, please?",
+                    zh: "意思：可以給我燒鵝嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["燒肉"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the roast pork belly, please?",
+                    zh: "意思：可以給我燒肉嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["扎蹄"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the braised pig trotters, please?",
+                    zh: "意思：可以給我扎蹄嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["餃子", "水餃"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the dumplings, please?",
+                    zh: "意思：可以給我餃子嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["生煎包"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the pan-fried buns, please?",
+                    zh: "意思：可以給我生煎包嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["小籠包"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could I have the soup dumplings, please?",
+                    zh: "意思：可以給我小籠包嗎？",
+                    usageZh: "Could I have… please 是最有禮貌的點餐說法。",
+                  },
+                ],
               },
             ],
           },
@@ -2891,9 +3602,9 @@ export const scenarios: Scenario[] = [
             models: [
               {
                 labelZh: "Riley 教你講",
-                en: "I'm Wei Ling, and I've been working in customer service for three years.",
-                zh: "意思：我是 Wei Ling，已從事客戶服務三年。",
-                usageZh: "開場採用這個結構最為穩妥：姓名 + 年資 + 職能。",
+                en: "Hi, I'm Wei Ling, thank you for having me today.",
+                zh: "意思：你好，我是 Wei Ling，謝謝你今天給我這個機會。",
+                usageZh: "面試開場除了自我介紹，也可以加上感謝主考官的話，顯得有禮貌又專業。如果想進一步補充背景，可以用「姓名＋年資＋職能」這個結構。",
                 namePlaceholder: "Wei Ling",
               },
             ],
