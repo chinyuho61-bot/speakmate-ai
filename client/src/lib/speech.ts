@@ -137,6 +137,62 @@ export async function speakEnglish(text: string, rate = 1): Promise<void> {
   window.speechSynthesis.speak(utterance);
 }
 
+// Same natural-voice-picking approach as scoreVoice, but for the Chinese
+// question text — prefers an actual Cantonese (zh-HK) voice, then falls
+// back through Traditional/Simplified Mandarin if the device has no
+// Cantonese voice installed (common on Windows).
+function scoreVoiceZh(voice: SpeechSynthesisVoice): number {
+  const lang = voice.lang.toLowerCase();
+  if (!lang.startsWith("zh")) return -1;
+  const name = voice.name.toLowerCase();
+  let score = 0;
+  if (lang === "zh-hk") score += 5;
+  else if (lang === "zh-tw") score += 2;
+  else if (lang === "zh-cn") score += 1;
+  if (name.includes("online") || name.includes("natural")) score += 10;
+  if (name.includes("google")) score += 6;
+  if (voice.localService) score -= 1;
+  return score;
+}
+
+function pickBestVoiceZh(voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | undefined {
+  return voices
+    .map((v) => ({ voice: v, score: scoreVoiceZh(v) }))
+    .filter((entry) => entry.score >= 0)
+    .sort((a, b) => b.score - a.score)[0]?.voice;
+}
+
+// Reads one or more Chinese/Cantonese lines aloud back-to-back (e.g. the
+// chapter-start greeting followed by the first question) — same
+// fallback-friendly design as speakEnglish, just with a Chinese voice
+// preference instead of an English one. Chains lines via each utterance's
+// onend so they play in order with a natural pause between them, rather
+// than overlapping or requiring separate calls.
+export async function speakChinese(text: string | string[], rate = 1): Promise<void> {
+  const lines = (Array.isArray(text) ? text : [text]).filter(Boolean);
+  if (!isSpeechSynthesisSupported() || lines.length === 0) return;
+  const voices = await loadVoices();
+  window.speechSynthesis.cancel();
+  const best = pickBestVoiceZh(voices);
+  const lang = best?.lang || "zh-HK";
+
+  let i = 0;
+  const speakNext = () => {
+    if (i >= lines.length) return;
+    const utterance = new SpeechSynthesisUtterance(lines[i]);
+    utterance.lang = lang;
+    utterance.rate = rate;
+    if (best) utterance.voice = best;
+    utterance.onend = () => {
+      i += 1;
+      speakNext();
+    };
+    currentUtterance = utterance;
+    window.speechSynthesis.speak(utterance);
+  };
+  speakNext();
+}
+
 let currentAudioEl: HTMLAudioElement | null = null;
 
 export function cancelSpeech(): void {

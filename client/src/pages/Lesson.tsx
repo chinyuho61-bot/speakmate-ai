@@ -9,8 +9,11 @@ import {
   playModelAudio,
   playNameSplicedAudio,
   speakEnglish,
+  speakChinese,
+  cancelSpeech,
 } from "@/lib/speech";
 import { useI18n } from "@/lib/i18n";
+import { useAuth } from "@/lib/auth";
 import { RileyVideo } from "@/components/RileyVideo";
 import { extractSelfIntroName } from "@/lib/nameExtract";
 import { getCurrentTutorName, getStoredTutorId } from "@/lib/tutors";
@@ -24,6 +27,7 @@ export function LessonPage() {
   );
   const [, navigate] = useLocation();
   const { t } = useI18n();
+  const { user } = useAuth();
   const tutorName = getCurrentTutorName();
   const scenario = params ? getScenario(params.scenarioId) : undefined;
   const chapter = scenario?.chapters.find((c) => c.id === params?.chapterId);
@@ -60,6 +64,24 @@ export function LessonPage() {
       stopListeningRef.current?.();
     };
   }, []);
+
+  // Reads the question aloud as soon as a turn starts, so the tutor "asks"
+  // it instead of the learner having to silently read the card themselves.
+  // At the start of a chapter (turnIndex 0), it leads with a personalized
+  // greeting — learner's name + what this chapter covers — before the
+  // question, same as the reference app's "Alice, welcome back!" intro.
+  useEffect(() => {
+    if (phase !== "ask") return;
+    const questionZh = chapter?.turns[turnIndex]?.questionZh;
+    if (!questionZh) return;
+    if (turnIndex === 0 && user?.name && chapter) {
+      const greeting = t("lesson.chapterGreeting", { name: user.name, goal: chapter.goalZh });
+      speakChinese([greeting, questionZh]);
+    } else {
+      speakChinese(questionZh);
+    }
+    return () => cancelSpeech();
+  }, [phase, turnIndex, chapter, user?.name, t]);
 
   if (!scenario || !chapter || !params) {
     return (
@@ -243,9 +265,15 @@ export function LessonPage() {
                 <div className="who">
                   <b>{tutorName}</b>
                 </div>
+                {turnIndex === 0 && (
+                  <div className="goal">
+                    {user?.name
+                      ? t("lesson.chapterGreeting", { name: user.name, goal: chapter.goalZh })
+                      : chapter.goalZh}
+                  </div>
+                )}
                 <div className="q">{turn.questionZh}</div>
                 {turn.questionSubZh && <div className="sub">{turn.questionSubZh}</div>}
-                {turnIndex === 0 && <div className="goal">{chapter.goalZh}</div>}
               </div>
 
               {phase !== "ask" && (
