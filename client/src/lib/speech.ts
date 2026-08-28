@@ -233,9 +233,6 @@ export function playModelAudio(audioId: string, fallbackText: string, rate = 1):
   audio.play().catch(fallback);
 }
 
-// Plays a model sentence that has the learner's own name spliced into it:
-// recorded clip (prefix) -> live TTS of just the name -> recorded clip
-// (suffix). Keeps Riley's real voice for the fixed wording either side of
 // Plays a sequence of Cantonese narration lines (e.g. chapter greeting +
 // question), using a pre-recorded per-tutor clip when available for a line
 // and falling back to live TTS for just that line otherwise — so a
@@ -298,6 +295,35 @@ export function playNarrationSequence(
     audio.play().catch(fallback);
   };
   playNext();
+}
+
+// Plays the encouragement line, trying three tiers in order: (1) a single
+// clip for the full sentence — how earlier chapters were recorded, before
+// the shared-prefix split existed, and re-recording those isn't worth it;
+// (2) a shared "明白了，你想" prefix clip (recorded once per tutor) + a
+// short per-turn suffix clip — how later chapters are recorded, since
+// saying that opener 126 times over was pure repetition; (3) live TTS for
+// the full text if neither recording exists yet. Whichever tier actually
+// has files on disk for a given turn plays correctly — no need to track
+// which chapters use which scheme.
+export function playEncouragementAudio(
+  fullAudioId: string,
+  prefixLine: { audioId: string; text: string },
+  suffixLine: { audioId: string; text: string },
+  rate = 1
+): void {
+  cancelSpeech();
+  const fullAudio = new Audio(`/audio/${fullAudioId}.mp3`);
+  fullAudio.playbackRate = rate;
+  currentAudioEl = fullAudio;
+  let fellBack = false;
+  const trySplitFormat = () => {
+    if (fellBack) return;
+    fellBack = true;
+    playNarrationSequence([prefixLine, suffixLine], rate);
+  };
+  fullAudio.addEventListener("error", trySplitFormat);
+  fullAudio.play().catch(trySplitFormat);
 }
 
 // Plays a model sentence that has the learner's own name spliced into it:

@@ -9,6 +9,7 @@ import {
   playModelAudio,
   playNameSplicedAudio,
   playNarrationSequence,
+  playEncouragementAudio,
   speakEnglish,
   cancelSpeech,
 } from "@/lib/speech";
@@ -95,13 +96,13 @@ export function LessonPage() {
   }, [phase, turnIndex, chapter, scenario, user?.name, t]);
 
   // Reads the encouragement line aloud once the learner's answer is
-  // understood, same recorded-clip-with-TTS-fallback approach as the
-  // question above. Every encouragementZh in shared/scenarios.ts starts
-  // with the same "明白了，你想" opener, so instead of re-recording that
-  // phrase 126 times (once per turn), it's split into one shared prefix
-  // clip per tutor + a short per-turn suffix clip — far less repetitive to
-  // record, and it splices back together seamlessly since both halves are
-  // real recordings (no live-TTS join needed, unlike the name-splice case).
+  // understood. Earlier chapters were recorded as one clip per full
+  // sentence; later chapters switched to a shared "明白了，你想" prefix
+  // (recorded once per tutor) + a short per-turn suffix, since re-recording
+  // that identical opener 126 times over was pure repetition. Both formats
+  // stay valid — playEncouragementAudio tries the full-sentence clip first,
+  // then the split clips, then live TTS, so whichever a given turn was
+  // actually recorded with just plays.
   useEffect(() => {
     if (phase !== "understood") return;
     const activeTurn = chapter?.turns[turnIndex];
@@ -111,13 +112,14 @@ export function LessonPage() {
     const suffixText = encouragementZh.startsWith(ENCOURAGEMENT_PREFIX)
       ? encouragementZh.slice(ENCOURAGEMENT_PREFIX.length)
       : encouragementZh;
-    playNarrationSequence([
+    playEncouragementAudio(
+      `${tutorId}/zh/${scenario.id}--${chapter.id}--${activeTurn!.id}--encouragement`,
       { audioId: `${tutorId}/zh/_shared--understood-prefix`, text: ENCOURAGEMENT_PREFIX },
       {
         audioId: `${tutorId}/zh/${scenario.id}--${chapter.id}--${activeTurn!.id}--encouragement-suffix`,
         text: suffixText,
-      },
-    ]);
+      }
+    );
     return () => cancelSpeech();
   }, [phase, turnIndex, chapter, scenario]);
 
