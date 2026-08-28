@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: speakmate
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 24.18.0
+      - key: DB_PATH
+        value: ./data/speakmate.sqlite
+      - key: JWT_SECRET
+        generateValue: true
+    # ⚠️ Free plan has no persistent disk — the SQLite file (and every
+    # registered user/progress row) is wiped on each redeploy or container
+    # restart. Fine for a demo link; if you need data to actually persist,
+    # upgrade `plan` to "starter" and uncomment the disk block below (it
+    # mounts a real volume so DB_PATH survives restarts):
+    # disk:
+    #   name: speakmate-data
+    #   mountPath: /var/data
+    #   sizeGB: 1
+    # (then change DB_PATH above to /var/data/speakmate.sqlite)
