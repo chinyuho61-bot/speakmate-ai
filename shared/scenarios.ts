@@ -18,6 +18,7 @@ export const scenarios: Scenario[] = [
     description: "初次見面也能自然、有禮貌地打招呼。",
     accent: "mint",
     icon: "user-circle",
+    level: "beginner",
     chapters: [
       {
         id: "identity-job",
@@ -1314,6 +1315,7 @@ export const scenarios: Scenario[] = [
     description: "無論是點餐、提出要求，還是餐點出錯，都能從容應付。",
     accent: "yellow",
     icon: "fork-knife",
+    level: "beginner",
     chapters: [
       {
         id: "basic-order",
@@ -3588,6 +3590,7 @@ export const scenarios: Scenario[] = [
     description: "分享自己的強項與經驗，保持冷靜自信。",
     accent: "lilac",
     icon: "briefcase",
+    level: "beginner",
     chapters: [
       {
         id: "self-intro",
@@ -3935,6 +3938,7 @@ export const scenarios: Scenario[] = [
     description: "清楚說明進度、提出建議，推動工作向前邁進。",
     accent: "blue",
     icon: "presentation-chart",
+    level: "beginner",
     chapters: [
       {
         id: "status-update",
@@ -4015,6 +4019,7 @@ export const scenarios: Scenario[] = [
     description: "問路、確認方向，在陌生地方也不怕迷路。",
     accent: "coral",
     icon: "map-trifold",
+    level: "beginner",
     chapters: [
       {
         id: "basic-directions",
@@ -4081,6 +4086,168 @@ export const scenarios: Scenario[] = [
                 en: "Thank you so much, that's really helpful.",
                 zh: "意思：非常感謝，真的幫了我很多。",
                 usageZh: "這句適用於任何人幫助你之後，表達真心的感謝。",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "see-doctor",
+    title: "See a doctor",
+    titleZh: "睇醫生",
+    description: "清楚描述身體狀況，聽懂醫生的建議，看病也能從容應對。",
+    accent: "coral",
+    icon: "stethoscope",
+    level: "intermediate",
+    chapters: [
+      {
+        id: "describe-symptoms",
+        title: "描述症狀",
+        goalZh: "學會清楚描述自己的身體狀況，讓醫生快速了解。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "醫生問你今天哪裡不舒服，你會怎麼說？",
+            chips: ["我喉嚨痛", "我頭痛", "我發燒"],
+            encouragementZh: "明白了，你想說明身體不適的地方。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "I have a sore throat and a headache.",
+                zh: "意思：我喉嚨痛，還有頭痛。",
+                usageZh: "have 後面直接加症狀名稱，是描述不適最常見的說法。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "醫生想知道這個情況持續了多久，你會怎麼回答？",
+            chips: ["已經兩天了", "從昨天開始"],
+            encouragementZh: "明白了，你想說明持續的時間。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "It's been like this for two days.",
+                zh: "意思：已經這樣兩天了。",
+                usageZh: "It's been … for … 是說明症狀持續時間的常見句型。",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "doctor-instructions",
+        title: "聽懂醫生建議",
+        goalZh: "學會回應醫生的建議，並確認服藥方法。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "醫生建議你要多休息，你會怎麼回應？",
+            chips: ["好的，我會多休息", "我會盡量早點睡"],
+            encouragementZh: "明白了，你想回應醫生的建議。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "Okay, I'll try to get more rest.",
+                zh: "意思：好的，我會盡量多休息。",
+                usageZh: "I'll try to … 語氣友善，表示願意配合。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想確認藥物該怎麼服用，可以怎麼問？",
+            chips: ["一天要吃幾次？", "要飯後吃嗎？"],
+            encouragementZh: "明白了，你想確認服藥方法。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "How many times a day should I take this?",
+                zh: "意思：這個藥一天要吃幾次？",
+                usageZh: "How many times a day 是詢問服藥頻率的常見說法。",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "banking",
+    title: "Open a bank account",
+    titleZh: "銀行開戶",
+    description: "開立戶口、查詢服務，處理銀行事務更有信心。",
+    accent: "lilac",
+    icon: "landmark",
+    level: "intermediate",
+    chapters: [
+      {
+        id: "open-account",
+        title: "開立戶口",
+        goalZh: "學會說明開戶目的，並回答基本個人資料問題。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "職員問你想辦理什麼服務，你會怎麼說？",
+            chips: ["我想開一個戶口", "我想開儲蓄戶口"],
+            encouragementZh: "明白了，你想說明來銀行的目的。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "I'd like to open a savings account, please.",
+                zh: "意思：我想開一個儲蓄戶口，麻煩你。",
+                usageZh: "I'd like to … please 是辦理服務時最常用、最有禮貌的說法。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "職員想確認你帶齊文件未，你會怎麼回答？",
+            chips: ["我帶了身份證", "我帶齊文件了"],
+            encouragementZh: "明白了，你想確認文件齊全。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Yes, I have my ID and proof of address with me.",
+                zh: "意思：有，我帶了身份證和地址證明。",
+                usageZh: "proof of address 是「地址證明」的固定說法，開戶常用得到。",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "account-services",
+        title: "查詢戶口服務",
+        goalZh: "學會查詢戶口相關服務，例如提款卡和網上銀行。",
+        turns: [
+          {
+            id: "t1",
+            questionZh: "你想查詢提款卡什麼時候可以領取，可以怎麼問？",
+            chips: ["提款卡什麼時候會有？", "大概要等多久？"],
+            encouragementZh: "明白了，你想查詢提款卡的領取時間。",
+            models: [
+              {
+                labelZh: "Riley 教你講",
+                en: "When can I expect to receive my debit card?",
+                zh: "意思：我大概什麼時候會收到提款卡？",
+                usageZh: "When can I expect to … 是查詢處理進度時常用、禮貌的問法。",
+              },
+            ],
+          },
+          {
+            id: "t2",
+            questionZh: "你想開通網上銀行服務，可以怎麼說？",
+            chips: ["我想開通網上銀行", "可以幫我登記網上理財嗎？"],
+            encouragementZh: "明白了，你想開通網上銀行服務。",
+            models: [
+              {
+                labelZh: "最後一句 · Riley 教你講",
+                en: "Could you help me set up online banking?",
+                zh: "意思：可以幫我開通網上銀行嗎？",
+                usageZh: "set up 是表示「開通、設定」某項服務的常見說法。",
               },
             ],
           },

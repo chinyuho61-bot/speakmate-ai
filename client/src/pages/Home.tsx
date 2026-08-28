@@ -5,7 +5,7 @@ import { useAuth } from "@/lib/auth";
 import { useI18n, locales } from "@/lib/i18n";
 import { api } from "@/lib/api";
 import { scenarios, getScenario } from "@shared/scenarios";
-import type { ProgressSummary } from "@shared/types";
+import type { ProgressSummary, Scenario } from "@shared/types";
 import { scenarioIconMap } from "@/lib/icons";
 import { BottomDock } from "@/components/BottomDock";
 import { RileyVideo } from "@/components/RileyVideo";
@@ -58,6 +58,20 @@ function UkFlagIcon() {
       </g>
     </svg>
   );
+}
+
+// Groups scenarios into consecutive same-level runs, preserving order, so
+// the roadmap can render a divider ("初級" / "中級") between bands — each
+// band gets its own independent grid (own local 0-based index), matching
+// the reference app's "complete a level, unlock the next" layout.
+function groupByLevel(list: Scenario[]): { level: Scenario["level"]; items: Scenario[] }[] {
+  const bands: { level: Scenario["level"]; items: Scenario[] }[] = [];
+  for (const s of list) {
+    const last = bands[bands.length - 1];
+    if (last && last.level === s.level) last.items.push(s);
+    else bands.push({ level: s.level, items: [s] });
+  }
+  return bands;
 }
 
 function buildRoadPath(count: number): string {
@@ -215,65 +229,72 @@ export function HomePage() {
             </div>
           )}
 
-          <div className="roadgrid" style={{ height: gridHeight(scenarios.length) }}>
-            <svg
-              viewBox={`0 0 100 ${gridHeight(scenarios.length)}`}
-              preserveAspectRatio="none"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path
-                d={buildRoadPath(scenarios.length)}
-                stroke="#D8E7F5"
-                strokeWidth={4}
-                strokeLinecap="round"
-              />
-            </svg>
-            {scenarios.map((scenario, i) => {
-              const s = progress.scenarios.find((x) => x.scenarioId === scenario.id)!;
-              const Icon = scenarioIconMap[scenario.icon];
-              const statusText =
-                s.state === "locked"
-                  ? t("home.locked")
-                  : s.state === "complete"
-                    ? `${s.completedChapters} / ${s.totalChapters}`
-                    : s.completedChapters === 0
-                      ? t("home.available", { count: s.totalChapters })
-                      : t("home.inProgress", { done: s.completedChapters, total: s.totalChapters });
-              const cls = s.state === "locked" ? "lock" : s.state === "complete" ? "ok" : s.state === "current" ? "cur" : "";
-              const clickable = s.state !== "locked";
-              const targetChapterId =
-                s.currentChapterId ?? scenario.chapters[scenario.chapters.length - 1].id;
-              const center = gridNodeCenter(i);
-
-              return (
-                <div
-                  key={scenario.id}
-                  className={`node ${cls}`}
-                  role={clickable ? "button" : undefined}
-                  style={{
-                    top: gridNodeTop(i),
-                    left: `${center.x}%`,
-                    cursor: clickable ? "pointer" : "default",
-                  }}
-                  onClick={() => clickable && navigate(`/lesson/${scenario.id}/${targetChapterId}`)}
+          {groupByLevel(scenarios).map((band) => (
+            <div key={band.level} className="level-band">
+              <div className="level-divider">
+                <span>{t(band.level === "beginner" ? "home.levelBeginner" : "home.levelIntermediate")}</span>
+              </div>
+              <div className="roadgrid" style={{ height: gridHeight(band.items.length) }}>
+                <svg
+                  viewBox={`0 0 100 ${gridHeight(band.items.length)}`}
+                  preserveAspectRatio="none"
+                  fill="none"
+                  aria-hidden="true"
                 >
-                  <span className="bubble">
-                    <Icon size={26} />
-                    {s.state === "locked" && (
-                      <span className="lockbadge">
-                        <Lock size={13} />
+                  <path
+                    d={buildRoadPath(band.items.length)}
+                    stroke="#D8E7F5"
+                    strokeWidth={4}
+                    strokeLinecap="round"
+                  />
+                </svg>
+                {band.items.map((scenario, i) => {
+                  const s = progress.scenarios.find((x) => x.scenarioId === scenario.id)!;
+                  const Icon = scenarioIconMap[scenario.icon];
+                  const statusText =
+                    s.state === "locked"
+                      ? t("home.locked")
+                      : s.state === "complete"
+                        ? `${s.completedChapters} / ${s.totalChapters}`
+                        : s.completedChapters === 0
+                          ? t("home.available", { count: s.totalChapters })
+                          : t("home.inProgress", { done: s.completedChapters, total: s.totalChapters });
+                  const cls = s.state === "locked" ? "lock" : s.state === "complete" ? "ok" : s.state === "current" ? "cur" : "";
+                  const clickable = s.state !== "locked";
+                  const targetChapterId =
+                    s.currentChapterId ?? scenario.chapters[scenario.chapters.length - 1].id;
+                  const center = gridNodeCenter(i);
+
+                  return (
+                    <div
+                      key={scenario.id}
+                      className={`node ${cls}`}
+                      role={clickable ? "button" : undefined}
+                      style={{
+                        top: gridNodeTop(i),
+                        left: `${center.x}%`,
+                        cursor: clickable ? "pointer" : "default",
+                      }}
+                      onClick={() => clickable && navigate(`/lesson/${scenario.id}/${targetChapterId}`)}
+                    >
+                      <span className="bubble">
+                        <Icon size={26} />
+                        {s.state === "locked" && (
+                          <span className="lockbadge">
+                            <Lock size={13} />
+                          </span>
+                        )}
                       </span>
-                    )}
-                  </span>
-                  <div>
-                    <b>{scenario.titleZh}</b>
-                    <span className="st">{statusText}</span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+                      <div>
+                        <b>{scenario.titleZh}</b>
+                        <span className="st">{statusText}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
 
           <div className="quick">
             <button disabled title={t("home.comingSoon")}>

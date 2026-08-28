@@ -351,6 +351,33 @@ button {
   margin-top: 2px;
 }
 /* — home roadmap: circle-bubble grid path — */
+.level-band {
+  margin-top: 8px;
+}
+.level-divider {
+  position: relative;
+  text-align: center;
+  margin: 18px 0 0;
+}
+.level-divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: var(--sm-border);
+}
+.level-divider span {
+  position: relative;
+  display: inline-block;
+  padding: 0 12px;
+  background: var(--sm-bg);
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--sm-mute);
+}
 .roadgrid {
   position: relative;
   margin: 22px 0 6px;

@@ -65,7 +65,16 @@ export type ScenarioIcon =
   | "fork-knife"
   | "briefcase"
   | "presentation-chart"
-  | "map-trifold";
+  | "map-trifold"
+  | "stethoscope"
+  | "landmark";
+
+// Groups scenarios into roadmap sections the learner unlocks in order —
+// all "beginner" scenarios must be completed before any "intermediate"
+// scenario unlocks, regardless of the level picked at onboarding (that
+// picked level is diagnostic only, matching the reference app's behaviour
+// of always starting everyone at the first band).
+export type ScenarioLevel = "beginner" | "intermediate";
 
 export type Scenario = {
   id: string;
@@ -74,6 +83,7 @@ export type Scenario = {
   description: string;
   accent: ScenarioAccent;
   icon: ScenarioIcon;
+  level: ScenarioLevel;
   chapters: Chapter[];
 };
 
