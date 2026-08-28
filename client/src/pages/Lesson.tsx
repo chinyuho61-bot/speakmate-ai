@@ -17,7 +17,7 @@ import { useI18n } from "@/lib/i18n";
 import { useAuth } from "@/lib/auth";
 import { RileyVideo } from "@/components/RileyVideo";
 import { extractSelfIntroName } from "@/lib/nameExtract";
-import { getCurrentTutorName, getStoredTutorId } from "@/lib/tutors";
+import { getCurrentTutorName, getStoredTutorId, getNarrationVoiceGroup } from "@/lib/tutors";
 import type { ModelSentence } from "@shared/types";
 
 type Phase = "ask" | "answer" | "understood" | "model" | "complete";
@@ -82,7 +82,8 @@ export function LessonPage() {
     const activeTurn = chapter?.turns[turnIndex];
     const questionZh = activeTurn?.questionZh;
     if (!questionZh || !scenario || !chapter) return;
-    const questionAudioId = `${getStoredTutorId()}/zh/${scenario.id}--${chapter.id}--${activeTurn!.id}--question`;
+    const voiceGroup = getNarrationVoiceGroup(getStoredTutorId());
+    const questionAudioId = `${voiceGroup}/zh/${scenario.id}--${chapter.id}--${activeTurn!.id}--question`;
     if (turnIndex === 0 && user?.name) {
       const greeting = t("lesson.chapterGreeting", { name: user.name, goal: chapter.goalZh });
       playNarrationSequence([
@@ -108,15 +109,15 @@ export function LessonPage() {
     const activeTurn = chapter?.turns[turnIndex];
     const encouragementZh = activeTurn?.encouragementZh;
     if (!encouragementZh || !scenario || !chapter) return;
-    const tutorId = getStoredTutorId();
+    const voiceGroup = getNarrationVoiceGroup(getStoredTutorId());
     const suffixText = encouragementZh.startsWith(ENCOURAGEMENT_PREFIX)
       ? encouragementZh.slice(ENCOURAGEMENT_PREFIX.length)
       : encouragementZh;
     playEncouragementAudio(
-      `${tutorId}/zh/${scenario.id}--${chapter.id}--${activeTurn!.id}--encouragement`,
-      { audioId: `${tutorId}/zh/_shared--understood-prefix`, text: ENCOURAGEMENT_PREFIX },
+      `${voiceGroup}/zh/${scenario.id}--${chapter.id}--${activeTurn!.id}--encouragement`,
+      { audioId: `${voiceGroup}/zh/_shared--understood-prefix`, text: ENCOURAGEMENT_PREFIX },
       {
-        audioId: `${tutorId}/zh/${scenario.id}--${chapter.id}--${activeTurn!.id}--encouragement-suffix`,
+        audioId: `${voiceGroup}/zh/${scenario.id}--${chapter.id}--${activeTurn!.id}--encouragement-suffix`,
         text: suffixText,
       }
     );
@@ -339,7 +340,7 @@ export function LessonPage() {
                       className="hear"
                       onClick={() => {
                         const questionZh = turn.questionZh;
-                        const questionAudioId = `${getStoredTutorId()}/zh/${scenario.id}--${chapter.id}--${turn.id}--question`;
+                        const questionAudioId = `${getNarrationVoiceGroup(getStoredTutorId())}/zh/${scenario.id}--${chapter.id}--${turn.id}--question`;
                         if (turnIndex === 0 && user?.name) {
                           playNarrationSequence([
                             { audioId: null, text: t("lesson.chapterGreeting", { name: user.name, goal: chapter.goalZh }) },

@@ -1,25 +1,38 @@
 # SpeakMate — 廣東話旁白配音清單
 
+## 只需要 2 把聲：男聲 + 女聲
+
+廣東話旁白唔跟返 5 個導師分開錄，淨係要 **一把男聲 + 一把女聲**，跟導師性別對應：
+
+| 導師 | 用邊把聲 |
+|---|---|
+| Riley | 女聲（female） |
+| Marcus | 男聲（male） |
+| Nicky | 男聲（male） |
+| Echo | 女聲（female） |
+| Mia | 女聲（female） |
+
 ## 重要：「明白了，你想」呢句唔使逐句錄
 
-全部 126 個回應（encouragement）都係用「**明白了，你想**」開頭，所以呢句每個導師淨係要錄**一次**就夠，唔使126句都由頭讀多次。下面表格嗰陣「回應」欄只列咗**餘下部分**（即係全句減咗開頭嗰6個字）。
+全部 126 個回應（encouragement）都係用「**明白了，你想**」開頭，所以呢句每把聲淨係要錄**一次**就夠。下面表格「回應」欄只列咗**餘下部分**（即係全句減咗開頭嗰6個字）。
 
 ## 檔案擺放規則
 
 ```
-client/public/audio/{tutorId}/zh/_shared--understood-prefix.mp3   ← 淨係呢句「明白了，你想」，每個導師錄一次
-client/public/audio/{tutorId}/zh/{scenarioId}--{chapterId}--{turnId}--question.mp3
-client/public/audio/{tutorId}/zh/{scenarioId}--{chapterId}--{turnId}--encouragement-suffix.mp3
+client/public/audio/{voiceGroup}/zh/_shared--understood-prefix.mp3   ← 「明白了，你想」，每把聲錄一次
+client/public/audio/{voiceGroup}/zh/{scenarioId}--{chapterId}--{turnId}--question.mp3
+client/public/audio/{voiceGroup}/zh/{scenarioId}--{chapterId}--{turnId}--encouragement-suffix.mp3
 ```
 
-- `tutorId`：riley / marcus / nicky / echo / mia
+- `voiceGroup`：**male** 或 **female**（唔係導師名）
 - 「問題」照舊要讀全句
 - 「回應（餘下部分）」淨係讀返表格入面嗰句（唔包括「明白了，你想」），播放嗰陣程式會自動幫你接返個開頭
 - 用廣東話讀，唔使讀出標點符號
+- 每句都要生成**兩次**（一次male、一次female），總共 (126×2+1) × 2 = 506 個音檔
 
 ---
 
-## 共用開頭句（每個導師錄一次）
+## 共用開頭句（男女各錄一次）
 
 **明白了，你想**
 
@@ -406,4 +419,4 @@ client/public/audio/{tutorId}/zh/{scenarioId}--{chapterId}--{turnId}--encouragem
 
 ---
 
-總共 126 個回合：問題 126 句 + 回應餘下部分 126 句 + 共用開頭 1 句 = 每個導師 253 個音檔。
+總共 126 個回合，每把聲（male/female）要 253 個音檔，兩把聲合共 506 個。

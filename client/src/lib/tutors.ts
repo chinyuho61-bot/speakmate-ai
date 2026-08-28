@@ -156,3 +156,27 @@ export function setStoredTutorId(id: TutorId): void {
 export function getCurrentTutorName(): string {
   return tutors.find((t) => t.id === getStoredTutorId())?.name ?? "Riley";
 }
+
+// The Cantonese narration (question/encouragement lines) shares just two
+// recorded voices — one male, one female — across all tutors, rather than
+// a distinct recording per tutor: the generated Cantonese voice never
+// matches each tutor's actual English voice closely anyway, so paying for
+// (and recording) five near-identical-sounding versions isn't worth it.
+// English model-sentence audio still uses each tutor's own per-tutor
+// recordings — this mapping only affects the client/public/audio/{group}/zh/
+// lookup path.
+export type NarrationVoiceGroup = "male" | "female";
+
+const NARRATION_VOICE_GROUP: Record<TutorId, NarrationVoiceGroup> = {
+  riley: "female",
+  zoe: "female",
+  claire: "female",
+  marcus: "male",
+  echo: "female",
+  nicky: "male",
+  mia: "female",
+};
+
+export function getNarrationVoiceGroup(tutorId: TutorId): NarrationVoiceGroup {
+  return NARRATION_VOICE_GROUP[tutorId];
+}
