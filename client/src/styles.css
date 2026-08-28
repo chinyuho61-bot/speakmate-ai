@@ -1439,6 +1439,56 @@ button {
   color: var(--sm-navy-2);
   cursor: pointer;
 }
+/* — locked-scenario override confirm — */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(15, 26, 46, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.modal-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--sm-surface);
+  border-radius: 24px;
+  padding: 28px 24px 24px;
+  box-shadow: var(--sm-sh-lg);
+  text-align: center;
+  animation: sheet-up 0.22s ease-out;
+}
+.modal-emoji {
+  font-size: 56px;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.modal-card h2 {
+  margin: 0 0 10px;
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--sm-navy);
+}
+.modal-card p {
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--sm-mute);
+}
+.modal-link {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--sm-blue);
+  cursor: pointer;
+}
 .tutor-list {
   display: flex;
   flex-direction: column;

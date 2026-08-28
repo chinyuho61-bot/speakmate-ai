@@ -99,6 +99,15 @@ export function HomePage() {
   const [loading, setLoading] = useState(true);
   const [tutorSheetOpen, setTutorSheetOpen] = useState(false);
   const [tutorId, setTutorId] = useState<TutorId>(() => getStoredTutorId());
+  // Locked scenarios are still clickable — instead of a dead end, this
+  // offers a choice: follow the recommended path, or jump straight to the
+  // locked lesson anyway (e.g. a beginner-level learner curious about 精通
+  // content). Neither the lesson page nor the completion API checks lock
+  // state, so overriding here is safe — the roadmap lock is a suggestion,
+  // not an enforced gate.
+  const [overridePrompt, setOverridePrompt] = useState<{ scenarioId: string; chapterId: string } | null>(
+    null
+  );
 
   useEffect(() => {
     let cancelled = false;
@@ -267,7 +276,6 @@ export function HomePage() {
                           ? t("home.available", { count: s.totalChapters })
                           : t("home.inProgress", { done: s.completedChapters, total: s.totalChapters });
                   const cls = s.state === "locked" ? "lock" : s.state === "complete" ? "ok" : s.state === "current" ? "cur" : "";
-                  const clickable = s.state !== "locked";
                   const targetChapterId =
                     s.currentChapterId ?? scenario.chapters[scenario.chapters.length - 1].id;
                   const center = gridNodeCenter(i);
@@ -276,13 +284,17 @@ export function HomePage() {
                     <div
                       key={scenario.id}
                       className={`node ${cls}`}
-                      role={clickable ? "button" : undefined}
+                      role="button"
                       style={{
                         top: gridNodeTop(i),
                         left: `${center.x}%`,
-                        cursor: clickable ? "pointer" : "default",
+                        cursor: "pointer",
                       }}
-                      onClick={() => clickable && navigate(`/lesson/${scenario.id}/${targetChapterId}`)}
+                      onClick={() =>
+                        s.state === "locked"
+                          ? setOverridePrompt({ scenarioId: scenario.id, chapterId: scenario.chapters[0].id })
+                          : navigate(`/lesson/${scenario.id}/${targetChapterId}`)
+                      }
                     >
                       <span className="bubble">
                         <Icon size={26} />
@@ -339,6 +351,36 @@ export function HomePage() {
           setTutorSheetOpen(false);
         }}
       />
+      {overridePrompt && (
+        <div className="modal-overlay" onClick={() => setOverridePrompt(null)}>
+          <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-emoji">🦘</div>
+            <h2>{t("home.overrideTitle")}</h2>
+            <p>{t("home.overrideBody")}</p>
+            <button
+              className="btn btn-primary btn-block"
+              onClick={() => {
+                setOverridePrompt(null);
+                if (currentScenario && currentChapter) {
+                  navigate(`/lesson/${currentScenario.id}/${currentChapter.id}`);
+                }
+              }}
+            >
+              {t("home.overrideFollowPath")}
+            </button>
+            <button
+              className="modal-link"
+              onClick={() => {
+                const target = overridePrompt;
+                setOverridePrompt(null);
+                navigate(`/lesson/${target.scenarioId}/${target.chapterId}`);
+              }}
+            >
+              {t("home.overrideJumpAnyway")}
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
