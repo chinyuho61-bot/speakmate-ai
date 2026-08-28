@@ -29,7 +29,8 @@ export function isSpeechSynthesisSupported(): boolean {
 export function startListening(
   onResult: (text: string, isFinal: boolean) => void,
   onEnd: () => void,
-  lang = "zh-HK"
+  lang = "zh-HK",
+  onError?: (error: string) => void
 ): (() => void) | null {
   const Ctor = getRecognitionCtor();
   if (!Ctor) return null;
@@ -50,10 +51,24 @@ export function startListening(
     if (finalText) onResult(finalText, true);
     else if (interimText) onResult(interimText, false);
   };
-  recognition.onerror = () => onEnd();
+  // event.error values per the Web Speech API spec: "not-allowed" (mic
+  // permission denied/blocked), "no-speech" (timed out with nothing heard),
+  // "audio-capture" (no mic found), "network", "language-not-supported", etc.
+  // Previously this just silently stopped listening with no feedback at
+  // all — from the user's side that's indistinguishable from "the mic
+  // button is broken", so surface the reason to the caller.
+  recognition.onerror = (event: any) => {
+    onError?.(event?.error || "unknown");
+    onEnd();
+  };
   recognition.onend = () => onEnd();
 
-  recognition.start();
+  try {
+    recognition.start();
+  } catch {
+    onError?.("start-failed");
+    return null;
+  }
   return () => recognition.stop();
 }
 
@@ -191,6 +206,29 @@ export async function speakChinese(text: string | string[], rate = 1): Promise<v
     window.speechSynthesis.speak(utterance);
   };
   speakNext();
+}
+
+let speechUnlocked = false;
+
+// Mobile browsers (iOS Safari in particular, and some Android WebViews)
+// only allow speechSynthesis.speak() when it's part of a real user
+// gesture's call stack. Our auto-speak calls fire from a useEffect after
+// navigation/render, one step removed from the tap that triggered them, so
+// they get silently blocked — no error, just no sound. Calling one silent
+// zero-length utterance synchronously inside the very first tap/click
+// anywhere in the app unlocks the engine for the rest of the page session,
+// so later programmatic calls (auto-speaking a question on turn change)
+// work normally. Safe to call multiple times; only the first tap does
+// anything.
+export function unlockSpeechOnFirstInteraction(): void {
+  if (typeof document === "undefined" || !isSpeechSynthesisSupported()) return;
+  const unlock = () => {
+    if (speechUnlocked) return;
+    speechUnlocked = true;
+    window.speechSynthesis.speak(new SpeechSynthesisUtterance(""));
+  };
+  document.addEventListener("touchend", unlock, { once: true, passive: true });
+  document.addEventListener("click", unlock, { once: true });
 }
 
 let currentAudioEl: HTMLAudioElement | null = null;

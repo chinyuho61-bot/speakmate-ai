@@ -37,6 +37,7 @@ export function LessonPage() {
   const [answerText, setAnswerText] = useState("");
   const [submittedText, setSubmittedText] = useState("");
   const [listening, setListening] = useState(false);
+  const [micError, setMicError] = useState<string | null>(null);
   const stopListeningRef = useRef<(() => void) | null>(null);
   const [completing, setCompleting] = useState(false);
   // The learner's own name, once we spot it in a "我叫X" / "我係X" answer —
@@ -137,17 +138,47 @@ export function LessonPage() {
       setListening(false);
       return;
     }
+    setMicError(null);
     const stop = startListening(
       (text) => setAnswerText(text),
       () => {
         setListening(false);
         stopListeningRef.current = null;
       },
-      "zh-HK"
+      "zh-HK",
+      (error) => {
+        setMicError(
+          error === "not-allowed" || error === "service-not-allowed"
+            ? t("lesson.micDenied")
+            : error === "no-speech"
+              ? t("lesson.micNoSpeech")
+              : error === "audio-capture"
+                ? t("lesson.micNotFound")
+                : t("lesson.micGenericError")
+        );
+      }
     );
     if (stop) {
       stopListeningRef.current = stop;
       setListening(true);
+      // Some mobile browsers (notably iOS Safari when mic access was
+      // permanently denied via device Settings, not just the in-page
+      // prompt) do nothing at all — no permission dialog, no onresult, no
+      // onerror, no onend — leaving the mic pulsing "listening" forever
+      // with zero feedback. Recognition normally settles well before this
+      // via "no-speech"; if this exact session is still active this long,
+      // force-stop it and explain, rather than leaving it stuck silently.
+      const session = stop;
+      setTimeout(() => {
+        if (stopListeningRef.current === session) {
+          session();
+          stopListeningRef.current = null;
+          setListening(false);
+          setMicError(t("lesson.micDenied"));
+        }
+      }, 8000);
+    } else {
+      setMicError(t("lesson.micGenericError"));
     }
   }
 
@@ -264,6 +295,25 @@ export function LessonPage() {
               <div className="msg">
                 <div className="who">
                   <b>{tutorName}</b>
+                  {phase === "ask" && (
+                    <span
+                      className="hear"
+                      onClick={() => {
+                        const questionZh = turn.questionZh;
+                        if (turnIndex === 0 && user?.name) {
+                          speakChinese([
+                            t("lesson.chapterGreeting", { name: user.name, goal: chapter.goalZh }),
+                            questionZh,
+                          ]);
+                        } else {
+                          speakChinese(questionZh);
+                        }
+                      }}
+                      title={t("lesson.hearQuestion")}
+                    >
+                      <Volume2 size={16} />
+                    </span>
+                  )}
                 </div>
                 {turnIndex === 0 && (
                   <div className="goal">
@@ -374,6 +424,7 @@ export function LessonPage() {
                       {t("lesson.submitAnswer", { tutor: tutorName })}
                     </button>
                   </div>
+                  {micError && <div className="mic-error">{micError}</div>}
                 </div>
               )}
             </>

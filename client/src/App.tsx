@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Route, Switch, Redirect } from "wouter";
 import { AuthProvider, useAuth } from "@/lib/auth";
 import { I18nProvider, useI18n } from "@/lib/i18n";
@@ -7,6 +8,7 @@ import { HomePage } from "@/pages/Home";
 import { LessonPage } from "@/pages/Lesson";
 import { ProgressPage } from "@/pages/Progress";
 import { FreeTalkPage } from "@/pages/FreeTalk";
+import { unlockSpeechOnFirstInteraction } from "@/lib/speech";
 
 function RequireAuth({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
@@ -83,6 +85,10 @@ function Routes() {
 }
 
 export default function App() {
+  useEffect(() => {
+    unlockSpeechOnFirstInteraction();
+  }, []);
+
   return (
     <I18nProvider>
       <AuthProvider>

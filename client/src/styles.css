@@ -791,6 +791,17 @@ button {
   text-transform: uppercase;
   color: var(--sm-mute);
 }
+.msg .who .hear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--sm-soft);
+  color: var(--sm-blue);
+  cursor: pointer;
+}
 .msg .q {
   font-size: 25px;
   font-weight: 700;
@@ -941,6 +952,16 @@ button {
   display: grid;
   place-items: center;
   cursor: pointer;
+}
+.mic-error {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(196, 83, 107, 0.1);
+  color: #c4536b;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
 }
 .answer .mic.listening {
   background: linear-gradient(160deg, #e8798f, #c4536b);

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import { Lock, Flame, Video, LifeBuoy, Users } from "lucide-react";
 import { useAuth } from "@/lib/auth";
-import { useI18n } from "@/lib/i18n";
+import { useI18n, locales } from "@/lib/i18n";
 import { api } from "@/lib/api";
 import { scenarios, getScenario } from "@shared/scenarios";
 import type { ProgressSummary } from "@shared/types";
@@ -72,7 +72,7 @@ function buildRoadPath(count: number): string {
 
 export function HomePage() {
   const { user, logout } = useAuth();
-  const { t } = useI18n();
+  const { t, locale, setLocale } = useI18n();
   const [, navigate] = useLocation();
   const [progress, setProgress] = useState<ProgressSummary | null>(null);
   const [loading, setLoading] = useState(true);
@@ -281,6 +281,22 @@ export function HomePage() {
               {t("home.sos")}
             </button>
             <button onClick={logout}>{t("home.logout")}</button>
+          </div>
+
+          <div className="lbl" style={{ marginTop: 22 }}>
+            {t("progress.languageSetting")}
+          </div>
+          <div className="lang-switch inline">
+            {locales.map((l) => (
+              <button
+                key={l.id}
+                className={locale === l.id ? "on" : ""}
+                onClick={() => setLocale(l.id)}
+                type="button"
+              >
+                {l.label}
+              </button>
+            ))}
           </div>
         </div>
       </div>

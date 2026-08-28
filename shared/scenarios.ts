@@ -1335,6 +1335,1035 @@ export const scenarios: Scenario[] = [
                 usageZh: "在點餐尾聲加點飲品，服務生會明白這是額外加點的項目。",
               },
             ],
+            // Matched against the learner's own typed answer (see `variants`
+            // on the Turn type) — expanded to cover common HK drink orders,
+            // so naming a specific drink teaches that drink's sentence
+            // instead of always defaulting to iced lemon tea.
+            variants: [
+              {
+                keywords: ["西瓜汁"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of watermelon juice, please.",
+                    zh: "意思：再加一杯西瓜汁，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["橙汁"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of orange juice, please.",
+                    zh: "意思：再加一杯橙汁，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["鮮榨橙汁", "鮮橙汁"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of freshly squeezed orange juice, please.",
+                    zh: "意思：再加一杯鮮榨橙汁，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["蘋果汁"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of apple juice, please.",
+                    zh: "意思：再加一杯蘋果汁，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["芒果汁"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of mango juice, please.",
+                    zh: "意思：再加一杯芒果汁，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["提子汁", "葡萄汁"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of grape juice, please.",
+                    zh: "意思：再加一杯提子汁，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["蕃茄汁", "番茄汁"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of tomato juice, please.",
+                    zh: "意思：再加一杯蕃茄汁，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["木瓜汁"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of papaya juice, please.",
+                    zh: "意思：再加一杯木瓜汁，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["士多啤梨汁", "草莓汁"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of strawberry juice, please.",
+                    zh: "意思：再加一杯士多啤梨汁，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["菠蘿汁"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of pineapple juice, please.",
+                    zh: "意思：再加一杯菠蘿汁，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["紅莓汁", "蔓越莓汁"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of cranberry juice, please.",
+                    zh: "意思：再加一杯紅莓汁，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["雜果汁"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of mixed fruit juice, please.",
+                    zh: "意思：再加一杯雜果汁，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["蜜瓜汁", "蜜瓜"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of honeydew juice, please.",
+                    zh: "意思：再加一杯蜜瓜汁，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["西柚汁", "葡萄柚汁"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of grapefruit juice, please.",
+                    zh: "意思：再加一杯西柚汁，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["凍檸茶", "檸檬茶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of iced lemon tea, please.",
+                    zh: "意思：再加一杯凍檸茶，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["熱檸茶", "熱檸檬茶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of hot lemon tea, please.",
+                    zh: "意思：再加一杯熱檸茶，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["檸蜜", "蜂蜜檸檬茶", "檸檬蜜"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of iced honey lemon tea, please.",
+                    zh: "意思：再加一杯凍檸蜜，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["熱檸蜜"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of hot honey lemon tea, please.",
+                    zh: "意思：再加一杯熱檸蜜，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["檸水", "檸檬水"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of iced lemon water, please.",
+                    zh: "意思：再加一杯凍檸水，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["熱檸水"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of hot lemon water, please.",
+                    zh: "意思：再加一杯熱檸水，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["檸樂"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of iced lemon coke, please.",
+                    zh: "意思：再加一杯凍檸樂，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["熱檸樂"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of hot lemon coke, please.",
+                    zh: "意思：再加一杯熱檸樂，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["檸七"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of iced lemon 7-up, please.",
+                    zh: "意思：再加一杯凍檸七，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["奶茶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of milk tea, please.",
+                    zh: "意思：再加一杯奶茶，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["凍奶茶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of iced milk tea, please.",
+                    zh: "意思：再加一杯凍奶茶，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["熱奶茶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of hot milk tea, please.",
+                    zh: "意思：再加一杯熱奶茶，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["鴛鴦"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of yuenyeung, please.",
+                    zh: "意思：再加一杯鴛鴦（咖啡奶茶），麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["熱鴛鴦"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of hot yuenyeung, please.",
+                    zh: "意思：再加一杯熱鴛鴦，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["珍珠奶茶", "波霸奶茶", "泡泡茶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of bubble milk tea, please.",
+                    zh: "意思：再加一杯珍珠奶茶，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["菊花茶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of chrysanthemum tea, please.",
+                    zh: "意思：再加一杯菊花茶，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["普洱茶", "普洱"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of pu-erh tea, please.",
+                    zh: "意思：再加一杯普洱茶，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["香片", "茉莉花茶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of jasmine tea, please.",
+                    zh: "意思：再加一杯茉莉花茶，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["烏龍茶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of oolong tea, please.",
+                    zh: "意思：再加一杯烏龍茶，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["綠茶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of green tea, please.",
+                    zh: "意思：再加一杯綠茶，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["紅茶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of black tea, please.",
+                    zh: "意思：再加一杯紅茶，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["龍井茶", "龍井"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of longjing tea, please.",
+                    zh: "意思：再加一杯龍井茶，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["鐵觀音"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of tieguanyin tea, please.",
+                    zh: "意思：再加一杯鐵觀音，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["伯爵茶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of earl grey tea, please.",
+                    zh: "意思：再加一杯伯爵茶，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["薄荷茶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of mint tea, please.",
+                    zh: "意思：再加一杯薄荷茶，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["洋甘菊茶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of chamomile tea, please.",
+                    zh: "意思：再加一杯洋甘菊茶，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["抹茶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of matcha, please.",
+                    zh: "意思：再加一杯抹茶，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["抹茶拿鐵"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of matcha latte, please.",
+                    zh: "意思：再加一杯抹茶拿鐵，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["涼茶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of herbal tea, please.",
+                    zh: "意思：再加一杯涼茶，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["酸梅湯"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of sour plum drink, please.",
+                    zh: "意思：再加一杯酸梅湯，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["冬瓜茶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of winter melon tea, please.",
+                    zh: "意思：再加一杯冬瓜茶，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["竹蔗茅根水", "竹蔗水"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of sugarcane and reed root drink, please.",
+                    zh: "意思：再加一杯竹蔗茅根水，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["陳皮水"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of dried tangerine peel drink, please.",
+                    zh: "意思：再加一杯陳皮水，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["咖啡"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of coffee, please.",
+                    zh: "意思：再加一杯咖啡，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["凍咖啡"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of iced coffee, please.",
+                    zh: "意思：再加一杯凍咖啡，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["熱咖啡"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of hot coffee, please.",
+                    zh: "意思：再加一杯熱咖啡，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["拿鐵"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of latte, please.",
+                    zh: "意思：再加一杯拿鐵，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["凍拿鐵"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of iced latte, please.",
+                    zh: "意思：再加一杯凍拿鐵，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["卡布奇諾"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of cappuccino, please.",
+                    zh: "意思：再加一杯卡布奇諾，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["美式咖啡", "美式"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of Americano, please.",
+                    zh: "意思：再加一杯美式咖啡，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["特濃咖啡", "濃縮咖啡", "意式濃縮"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of espresso, please.",
+                    zh: "意思：再加一杯特濃咖啡，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["摩卡"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of mocha, please.",
+                    zh: "意思：再加一杯摩卡，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["焦糖瑪奇朵"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of caramel macchiato, please.",
+                    zh: "意思：再加一杯焦糖瑪奇朵，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["熱可可", "熱朱古力", "熱巧克力"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of hot chocolate, please.",
+                    zh: "意思：再加一杯熱可可，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["凍朱古力奶", "凍朱古力", "凍巧克力"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of iced chocolate milk, please.",
+                    zh: "意思：再加一杯凍朱古力奶，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["可樂"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of coke, please.",
+                    zh: "意思：再加一杯可樂，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["雪碧", "七喜"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of sprite, please.",
+                    zh: "意思：再加一杯雪碧，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["芬達"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of fanta, please.",
+                    zh: "意思：再加一杯芬達，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["沙士"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of sarsi, please.",
+                    zh: "意思：再加一杯沙士，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["忌廉梳打"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of cream soda, please.",
+                    zh: "意思：再加一杯忌廉梳打，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["薑汁啤酒", "薑汁汽水"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of ginger ale, please.",
+                    zh: "意思：再加一杯薑汁啤酒，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["有氣水", "梳打水", "湯力水"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of sparkling water, please.",
+                    zh: "意思：再加一杯有氣水，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["好立克"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of Horlicks, please.",
+                    zh: "意思：再加一杯好立克，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["凍好立克"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of iced Horlicks, please.",
+                    zh: "意思：再加一杯凍好立克，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["阿華田"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of Ovaltine, please.",
+                    zh: "意思：再加一杯阿華田，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["凍阿華田"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of iced Ovaltine, please.",
+                    zh: "意思：再加一杯凍阿華田，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["鮮奶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of fresh milk, please.",
+                    zh: "意思：再加一杯鮮奶，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["豆漿"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of soy milk, please.",
+                    zh: "意思：再加一杯豆漿，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["杏仁茶", "杏仁露"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of almond milk tea, please.",
+                    zh: "意思：再加一杯杏仁茶，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["維他奶"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a bottle of Vitasoy, please.",
+                    zh: "意思：再加一樽維他奶，麻煩你。",
+                    usageZh: "樽裝飲品用 a bottle of 表達最自然。",
+                  },
+                ],
+              },
+              {
+                keywords: ["蜜糖水", "蜂蜜水"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of honey water, please.",
+                    zh: "意思：再加一杯蜜糖水，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["礦泉水"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a bottle of mineral water, please.",
+                    zh: "意思：再加一樽礦泉水，麻煩你。",
+                    usageZh: "樽裝飲品用 a bottle of 表達最自然。",
+                  },
+                ],
+              },
+              {
+                keywords: ["蒸餾水"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a bottle of distilled water, please.",
+                    zh: "意思：再加一樽蒸餾水，麻煩你。",
+                    usageZh: "樽裝飲品用 a bottle of 表達最自然。",
+                  },
+                ],
+              },
+              {
+                keywords: ["凍水", "冰水"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of iced water, please.",
+                    zh: "意思：再加一杯凍水，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["室溫水", "常溫水"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of room-temperature water, please.",
+                    zh: "意思：再加一杯室溫水，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["熱水", "滾水"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a cup of hot water, please.",
+                    zh: "意思：再加一杯熱水，麻煩你。",
+                    usageZh: "熱飲用 a cup of 表達，效果同樣清楚有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["啤酒", "生啤"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a bottle of beer, please.",
+                    zh: "意思：再加一樽啤酒，麻煩你。",
+                    usageZh: "樽裝飲品用 a bottle of 表達最自然。",
+                  },
+                ],
+              },
+              {
+                keywords: ["紅酒"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of red wine, please.",
+                    zh: "意思：再加一杯紅酒，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["白酒", "白葡萄酒"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of white wine, please.",
+                    zh: "意思：再加一杯白酒，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["香檳"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of champagne, please.",
+                    zh: "意思：再加一杯香檳，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["威士忌"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of whisky, please.",
+                    zh: "意思：再加一杯威士忌，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["芒果冰沙", "芒果沙冰"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of mango smoothie, please.",
+                    zh: "意思：再加一杯芒果冰沙，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["檸檬冰沙"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of lemon slush, please.",
+                    zh: "意思：再加一杯檸檬冰沙，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["楊枝甘露"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of mango pomelo sago, please.",
+                    zh: "意思：再加一杯楊枝甘露，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["香蕉奶昔"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of banana milkshake, please.",
+                    zh: "意思：再加一杯香蕉奶昔，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["朱古力奶昔", "巧克力奶昔"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of chocolate milkshake, please.",
+                    zh: "意思：再加一杯朱古力奶昔，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["士多啤梨奶昔", "草莓奶昔"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of strawberry milkshake, please.",
+                    zh: "意思：再加一杯士多啤梨奶昔，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["芒果奶昔"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of mango milkshake, please.",
+                    zh: "意思：再加一杯芒果奶昔，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+              {
+                keywords: ["西柚特飲", "西柚梳打"],
+                models: [
+                  {
+                    labelZh: "最後一句 · Riley 教你講",
+                    en: "And a glass of grapefruit soda, please.",
+                    zh: "意思：再加一杯西柚特飲，麻煩你。",
+                    usageZh: "在點餐尾聲加點飲品時，冷飲用 a glass of 表達，清楚又有禮貌。",
+                  },
+                ],
+              },
+            ],
           },
         ],
       },
@@ -1355,6 +2384,420 @@ export const scenarios: Scenario[] = [
                 en: "Could you make it less spicy, please?",
                 zh: "意思：可以做得沒那麼辣嗎？",
                 usageZh: "點餐時或上菜前告訴服務生都適用，加上 please 最為妥當。",
+              },
+            ],
+            // Matched against the learner's own typed answer (see `variants`
+            // on the Turn type) — covers ingredient-removal / dietary
+            // requests ("走芫茜", "對花生敏感"...) so naming a specific
+            // ingredient teaches that request, instead of always defaulting
+            // to the fixed less-spicy example.
+            variants: [
+              {
+                keywords: ["芫茜", "香菜"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the coriander, please?",
+                    zh: "意思：可以不要放芫茜嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["蔥", "葱"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the spring onion, please?",
+                    zh: "意思：可以不要放蔥嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["蒜", "蒜頭"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the garlic, please?",
+                    zh: "意思：可以不要放蒜嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["薑"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the ginger, please?",
+                    zh: "意思：可以不要放薑嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["洋蔥"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the onion, please?",
+                    zh: "意思：可以不要放洋蔥嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["辣椒", "指天椒"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the chili, please?",
+                    zh: "意思：可以不要放辣椒嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["芥末"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the mustard, please?",
+                    zh: "意思：可以不要放芥末嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["花生"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the peanuts, please?",
+                    zh: "意思：可以不要放花生嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["味精"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the MSG, please?",
+                    zh: "意思：可以不要放味精嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["芝士", "起司"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the cheese, please?",
+                    zh: "意思：可以不要放芝士嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["沙律醬", "沙拉醬", "蛋黃醬"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the mayonnaise, please?",
+                    zh: "意思：可以不要放沙律醬嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["皮蛋"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the century egg, please?",
+                    zh: "意思：可以不要放皮蛋嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["蛋"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the egg, please?",
+                    zh: "意思：可以不要放蛋嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["牛奶", "奶"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the milk, please?",
+                    zh: "意思：可以不要放牛奶嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["蝦"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the shrimp, please?",
+                    zh: "意思：可以不要放蝦嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["蟹"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the crab, please?",
+                    zh: "意思：可以不要放蟹嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["堅果"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the nuts, please?",
+                    zh: "意思：可以不要放堅果嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["豬肉"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the pork, please?",
+                    zh: "意思：可以不要放豬肉嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["牛肉"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the beef, please?",
+                    zh: "意思：可以不要放牛肉嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["海鮮"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the seafood, please?",
+                    zh: "意思：可以不要放海鮮嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["麩質", "麥麩"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the gluten, please?",
+                    zh: "意思：可以不要放麩質嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["青瓜", "黃瓜"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the cucumber, please?",
+                    zh: "意思：可以不要放青瓜嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["番茄", "蕃茄"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the tomato, please?",
+                    zh: "意思：可以不要放番茄嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["生菜"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the lettuce, please?",
+                    zh: "意思：可以不要放生菜嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["韭菜"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the chives, please?",
+                    zh: "意思：可以不要放韭菜嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["香菇", "冬菇", "蘑菇"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the mushrooms, please?",
+                    zh: "意思：可以不要放香菇嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["芹菜"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the celery, please?",
+                    zh: "意思：可以不要放芹菜嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["紫菜"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the seaweed, please?",
+                    zh: "意思：可以不要放紫菜嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["木耳"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the wood ear mushroom, please?",
+                    zh: "意思：可以不要放木耳嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["榨菜"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the pickled mustard greens, please?",
+                    zh: "意思：可以不要放榨菜嗎？",
+                    usageZh: "leave out 表示「不要放入」某項食材，適用於任何想去除的配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["走青"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the spring onion and coriander, please?",
+                    zh: "意思：可以不要放蔥和芫茜嗎？",
+                    usageZh: "走青是廣東話常見說法，指同時去除蔥和芫茜這兩種配料。",
+                  },
+                ],
+              },
+              {
+                keywords: ["少甜", "走甜", "唔要咁甜"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you make it less sweet, please?",
+                    zh: "意思：可以做得沒那麼甜嗎？",
+                    usageZh: "想調整甜度時，用 less sweet 代替 less spicy 即可。",
+                  },
+                ],
+              },
+              {
+                keywords: ["少鹽", "走鹽", "清淡啲"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you make it less salty, please?",
+                    zh: "意思：可以做得沒那麼鹹嗎？",
+                    usageZh: "想調整鹹度時，用 less salty 表達最直接。",
+                  },
+                ],
+              },
+              {
+                keywords: ["少油", "走油"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you make it less oily, please?",
+                    zh: "意思：可以做得沒那麼油膩嗎？",
+                    usageZh: "想減少油份時，用 less oily 表達最直接。",
+                  },
+                ],
+              },
+              {
+                keywords: ["唔要辣", "免辣", "走辣", "唔要落辣椒"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you leave out the chili completely, please?",
+                    zh: "意思：可以完全不要放辣椒嗎？",
+                    usageZh: "「完全不要辣」和「少辣」不同，用 leave out…completely 表達得更準確。",
+                  },
+                ],
+              },
+              {
+                keywords: ["加辣", "多辣", "要辣啲", "辣啲"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "Could you make it extra spicy, please?",
+                    zh: "意思：可以做得更辣一點嗎？",
+                    usageZh: "想要求加辣時用 extra spicy，和 less spicy 方向相反，不要混淆。",
+                  },
+                ],
+              },
+              {
+                keywords: ["敏感", "過敏"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have a food allergy — could you leave that out, please?",
+                    zh: "意思：我對這種食材過敏，可以不要放嗎？",
+                    usageZh: "涉及食物敏感時，加上 food allergy 讓服務生更留意，比一般要求更重要。",
+                  },
+                ],
               },
             ],
           },
@@ -1452,6 +2895,265 @@ export const scenarios: Scenario[] = [
                 zh: "意思：我是 Wei Ling，已從事客戶服務三年。",
                 usageZh: "開場採用這個結構最為穩妥：姓名 + 年資 + 職能。",
                 namePlaceholder: "Wei Ling",
+              },
+            ],
+            // Matched against the learner's own typed answer (see `variants`
+            // on the Turn type) — covers "我有 N 年經驗" style answers so a
+            // specific number of years teaches that number, instead of
+            // always defaulting to the fixed 3-year example.
+            variants: [
+              {
+                keywords: ["未有經驗", "沒有經驗", "冇經驗", "無經驗", "剛畢業", "應屆畢業生", "剛入行", "新人一個"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I don't have direct experience yet, but I'm a fast learner.",
+                    zh: "意思：我暫時未有直接經驗，但我學習能力很快。",
+                    usageZh: "面試時坦白說明沒有經驗、同時強調學習能力，是常見又誠實的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["十年以上", "超過十年", "十幾年", "十多年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have over ten years of experience.",
+                    zh: "意思：我有超過十年經驗。",
+                    usageZh: "over 表示「超過」，適合用來說明較長的年資，不需要說出精確數字。",
+                  },
+                ],
+              },
+              {
+                keywords: ["好多年經驗", "很多年經驗", "多年經驗", "資深"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have many years of experience in this field.",
+                    zh: "意思：我在這個領域有多年經驗。",
+                    usageZh: "many years 適合在不想說出精確數字時使用，同樣清楚有說服力。",
+                  },
+                ],
+              },
+              {
+                keywords: ["20年", "二十年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 20 years of experience.",
+                    zh: "意思：我有 20 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["19年", "十九年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 19 years of experience.",
+                    zh: "意思：我有 19 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["18年", "十八年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 18 years of experience.",
+                    zh: "意思：我有 18 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["17年", "十七年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 17 years of experience.",
+                    zh: "意思：我有 17 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["16年", "十六年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 16 years of experience.",
+                    zh: "意思：我有 16 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["15年", "十五年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 15 years of experience.",
+                    zh: "意思：我有 15 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["14年", "十四年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 14 years of experience.",
+                    zh: "意思：我有 14 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["13年", "十三年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 13 years of experience.",
+                    zh: "意思：我有 13 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["12年", "十二年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 12 years of experience.",
+                    zh: "意思：我有 12 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["11年", "十一年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 11 years of experience.",
+                    zh: "意思：我有 11 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["10年", "十年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 10 years of experience.",
+                    zh: "意思：我有 10 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["9年", "九年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 9 years of experience.",
+                    zh: "意思：我有 9 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["8年", "八年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 8 years of experience.",
+                    zh: "意思：我有 8 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["7年", "七年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 7 years of experience.",
+                    zh: "意思：我有 7 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["6年", "六年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 6 years of experience.",
+                    zh: "意思：我有 6 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["5年", "五年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 5 years of experience.",
+                    zh: "意思：我有 5 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["4年", "四年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 4 years of experience.",
+                    zh: "意思：我有 4 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["3年", "三年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 3 years of experience.",
+                    zh: "意思：我有 3 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["2年", "二年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 2 years of experience.",
+                    zh: "意思：我有 2 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
+              },
+              {
+                keywords: ["1年", "一年"],
+                models: [
+                  {
+                    labelZh: "Riley 教你講",
+                    en: "I have 1 year of experience.",
+                    zh: "意思：我有 1 年經驗。",
+                    usageZh: "I have + 年資 + years of experience，是說明工作年資最直接的說法。",
+                  },
+                ],
               },
             ],
           },
