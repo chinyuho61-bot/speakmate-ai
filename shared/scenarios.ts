@@ -33,9 +33,9 @@ export const scenarios: Scenario[] = [
             models: [
               {
                 labelZh: "Riley 教你講",
-                en: "Hi, I'm Wei Ling and I work in marketing.",
-                zh: "意思：你好，我叫 Wei Ling，在市場推廣領域工作。",
-                usageZh: "適用於認識新同事、活動場合的自我介紹，記得保持眼神接觸並面帶微笑。",
+                en: "Hi, I'm Wei Ling, nice to meet you.",
+                zh: "意思：你好，我叫 Wei Ling，很高興認識你。",
+                usageZh: "適用於認識新同事、活動場合的自我介紹，記得保持眼神接觸並面帶微笑。工作內容留待對方問起時再說明即可，不用一開口就交代。",
                 namePlaceholder: "Wei Ling",
               },
             ],
@@ -51,7 +51,7 @@ export const scenarios: Scenario[] = [
                 labelZh: "最後一句 · Riley 教你講",
                 en: "I work at a marketing agency downtown.",
                 zh: "意思：我在市中心一間市場推廣公司上班。",
-                usageZh: "承接前面提到的 marketing，讓整段自我介紹前後呼應。想再簡短一點，只說 at a marketing agency 也可以。",
+                usageZh: "想再簡短一點，只說 at a marketing agency 也可以。",
               },
             ],
             // Matched against the learner's own typed answer (see
