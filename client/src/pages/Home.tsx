@@ -354,7 +354,7 @@ export function HomePage() {
       {overridePrompt && (
         <div className="modal-overlay" onClick={() => setOverridePrompt(null)}>
           <div className="modal-card" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-emoji">🦘</div>
+            <div className="modal-emoji">🚀</div>
             <h2>{t("home.overrideTitle")}</h2>
             <p>{t("home.overrideBody")}</p>
             <button
