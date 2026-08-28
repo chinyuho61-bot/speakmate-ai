@@ -5,6 +5,7 @@ import type {
   ScenarioProgressSummary,
   CompleteChapterRequest,
   SavedSentence,
+  ScenarioLevel,
 } from "../../shared/types.js";
 import {
   listCompletions,
@@ -47,40 +48,80 @@ function computeStreakDays(completedAtIso: string[]): number {
   return streak;
 }
 
-function buildScenarioSummaries(completedKeys: Set<string>): ScenarioProgressSummary[] {
-  const summaries: ScenarioProgressSummary[] = [];
-  let previousComplete = true;
+// Roadmap band order — must match the sequence scenarios are authored in
+// (shared/scenarios.ts appends higher bands after lower ones).
+const BAND_ORDER: ScenarioLevel[] = ["beginner", "intermediate"];
+function bandRank(level: ScenarioLevel): number {
+  return BAND_ORDER.indexOf(level);
+}
 
-  for (const scenario of scenarios) {
+// The level picked at onboarding decides which band a learner starts
+// unlocked at — an "intermediate" (or higher) learner shouldn't be forced
+// to redo 初級 before reaching 中級. Levels above the highest authored band
+// just start at that highest band.
+function startingBandFor(userLevel: string | null): ScenarioLevel {
+  if (userLevel === "intermediate" || userLevel === "advanced" || userLevel === "native-like") {
+    return "intermediate";
+  }
+  return "beginner";
+}
+
+function buildScenarioSummaries(
+  completedKeys: Set<string>,
+  userLevel: string | null
+): ScenarioProgressSummary[] {
+  const startingRank = bandRank(startingBandFor(userLevel));
+
+  // Pass 1: a scenario in a band strictly BELOW the learner's starting band
+  // is unlocked outright (skippable). Scenarios in the starting band itself
+  // — and any band above it — still go through the original "complete
+  // everything before it" sequential chain, so within-band ordering (and
+  // any future band beyond what's authored) is unaffected.
+  let previousComplete = true;
+  const computed = scenarios.map((scenario) => {
     const totalChapters = scenario.chapters.length;
     const completedChapters = scenario.chapters.filter((c) =>
       completedKeys.has(`${scenario.id}:${c.id}`)
     ).length;
     const isComplete = completedChapters === totalChapters;
-    const unlocked = previousComplete;
+    const belowStartingBand = bandRank(scenario.level) < startingRank;
+    const unlocked = belowStartingBand || previousComplete;
+    previousComplete = (isComplete || belowStartingBand) && previousComplete;
+    return { scenario, totalChapters, completedChapters, isComplete, unlocked };
+  });
 
-    let state: ScenarioProgressSummary["state"];
-    if (!unlocked) state = "locked";
-    else if (isComplete) state = "complete";
-    else state = "current";
-
-    const nextChapter = scenario.chapters.find(
-      (c) => !completedKeys.has(`${scenario.id}:${c.id}`)
-    );
-
-    summaries.push({
-      scenarioId: scenario.id,
-      state,
-      completedChapters,
-      totalChapters,
-      currentChapterId: unlocked ? nextChapter?.id ?? null : null,
-      currentTurnIndex: 0,
-    });
-
-    previousComplete = isComplete && previousComplete;
+  // Pass 2: exactly one scenario is "current" (the home screen's CTA
+  // target) — prefer the first incomplete one at/after the starting band,
+  // so an intermediate learner's CTA points at 中級, not back at 初級; fall
+  // back to an earlier skippable-band scenario only if everything from
+  // their starting band onward is already done.
+  let currentIndex = computed.findIndex(
+    (c) => c.unlocked && !c.isComplete && bandRank(c.scenario.level) >= startingRank
+  );
+  if (currentIndex === -1) {
+    currentIndex = computed.findIndex((c) => c.unlocked && !c.isComplete);
   }
 
-  return summaries;
+  return computed.map((c, i) => {
+    let state: ScenarioProgressSummary["state"];
+    if (!c.unlocked) state = "locked";
+    else if (c.isComplete) state = "complete";
+    else if (i === currentIndex) state = "current";
+    else state = "available";
+
+    const nextChapter = c.scenario.chapters.find(
+      (ch) => !completedKeys.has(`${c.scenario.id}:${ch.id}`)
+    );
+
+    return {
+      scenarioId: c.scenario.id,
+      state,
+      completedChapters: c.completedChapters,
+      totalChapters: c.totalChapters,
+      currentChapterId: c.unlocked ? nextChapter?.id ?? null : null,
+      currentTurnIndex: 0,
+    };
+  });
 }
 
 progressRouter.get("/", (req: AuthedRequest, res) => {
@@ -102,7 +143,7 @@ progressRouter.get("/", (req: AuthedRequest, res) => {
     completedChapters: completions.length,
     streakDays: computeStreakDays(completions.map((c) => c.completed_at)),
     savedSentenceCount: savedSentences.length,
-    scenarios: buildScenarioSummaries(completedKeys),
+    scenarios: buildScenarioSummaries(completedKeys, req.user!.level),
     savedSentences,
   };
 
