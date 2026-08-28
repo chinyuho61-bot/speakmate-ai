@@ -3,7 +3,10 @@ services:
     name: speakmate
     runtime: node
     plan: free
-    buildCommand: npm install && npm run build
+    # --include=dev is required: NODE_ENV=production below makes npm skip
+    # devDependencies otherwise, and vite/typescript (needed for the build
+    # step itself, not just at runtime) live there.
+    buildCommand: npm install --include=dev && npm run build
     startCommand: npm start
     healthCheckPath: /api/health
     envVars:
